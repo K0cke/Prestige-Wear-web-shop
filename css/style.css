@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* --- NAVIGACIJA --- */
+header {
+    background-color: transparent; 
+    padding: 30px; 
+    
+    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header.skrolovan {
+    background-color: #0d385c; 
+    padding: 15px 30px;       
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    width: 100%;
+    padding: 0 10%;                
+}
+
+.navigacija img {
+    height: 60px; 
+    object-fit: contain;
+}
+
+.navigacija ul {
+    display: flex;
+    gap: 40px; 
+    list-style: none;
+    justify-content: center; 
+    width: 100%;
+}
+
+.navigacija ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.navigacija ul li a:hover {
+    color: #3C9DD0; 
+}
+
+/*kraj navigacije*/
