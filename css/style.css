@@ -1,0 +1,274 @@
+:root {
+    --gold-main: #c9933b;        /* Zlatna boja sa slike */
+    --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
+    --dark-bg: #09090b;          /* Pozadina */
+    --card-bg: #121215;          /* Tamna podloga za kontejner */
+    --border-gold: rgba(201, 147, 59, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* hero sekcija */
+#hero {
+    background-image: url('../img/hero4.png');
+    background-size: cover;          /* Popunjava ceo ekran bez deformisanja */
+    background-position: center;     /* Centrira zlatni talas u sredinu */
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    min-height: 100vh;               /* Visina preko celog ekrana */
+    padding: 40px 15px;
+    display: flex;
+    align-items: center;
+
+    /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Animacija pulsiranja zlatne ivice */
+@keyframes goldPulse {
+    0% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(201, 147, 59, 0.2);
+        border-color: rgba(201, 147, 59, 0.35);
+    }
+    50% {
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.95), 0 0 25px rgba(201, 147, 59, 0.5);
+        border-color: rgba(201, 147, 59, 0.7);
+    }
+    100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(201, 147, 59, 0.2);
+        border-color: rgba(201, 147, 59, 0.35);
+    }
+}
+
+/* Glavni tamni kontejner sa zlatnim okvirom */
+.hero-card-container {
+    background: rgba(12, 12, 15, 0.94);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    animation: goldPulse 4s infinite ease-in-out;
+}
+
+.sub-title {
+    color: var(--gold-main);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.hero-main-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.hero-subtext {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Dugme Promeni Modele */
+.btn-promeni-modele {
+    background: transparent;
+    color: var(--gold-main);
+    border: 1px solid var(--gold-main);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-promeni-modele i {
+    transition: transform 0.4s ease;
+}
+
+.btn-promeni-modele:hover {
+    background: var(--gold-main);
+    color: #000000;
+    box-shadow: 0 0 12px rgba(201, 147, 59, 0.4);
+}
+
+.btn-promeni-modele:hover i {
+    transform: rotate(180deg);
+}
+
+/* Animacija pojavljivanja kartica pri zameni */
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kartica proizvoda */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInCard 0.35s ease-out forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(201, 147, 59, 0.25);
+}
+
+.badge-rasprodaja {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.65rem;
+    padding: 3px 7px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.badge-popust {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #c93b3b;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 3px 7px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.product-img-wrap {
+    padding: 15px 10px;
+    text-align: center;
+    background: #fcfcfc;
+    overflow: hidden;
+    height: 190px; /* Fiksna visina za savršeno poravnanje kartica */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img-wrap img {
+    max-height: 165px; /* Povećane slike da budu uočljivije */
+    object-fit: contain;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+    transform: scale(1.08); /* Jači zoom efekat na hover */
+}
+
+.product-info {
+    padding: 12px;
+    background: #ffffff;
+}
+
+.product-title {
+    font-size: 0.85rem;
+    color: #222222;
+    margin-bottom: 8px;
+    min-height: 36px;
+    line-height: 1.3;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #888888;
+    font-size: 0.78rem;
+    margin-right: 6px;
+}
+
+.price-new {
+    color: #000000;
+    font-size: 1.05rem;
+}
+
+/* Dugmad na dnu */
+.btn-pogledaj-card {
+    background: #111111;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    transition: background 0.2s ease;
+}
+
+.btn-pogledaj-card:hover {
+    background: var(--gold-main);
+    color: #000000;
+}
+
+.btn-pogledaj-sve {
+    background: var(--gold-main);
+    color: #000000;
+    padding: 10px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-pogledaj-sve:hover {
+    background: var(--gold-light);
+    box-shadow: 0 0 12px rgba(230, 184, 106, 0.4);
+}
+
+/* RESPONZIVNOST ZA TELEFONE */
+@media (max-width: 768px) {
+    .hero-main-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-card-container {
+        padding: 20px 12px !important;
+    }
+
+    .btn-pogledaj-sve, .btn-promeni-modele {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .product-img-wrap {
+        height: 140px; /* Prilagođena visina za telefone */
+    }
+
+    .product-img-wrap img {
+        max-height: 120px; /* Veće slike na mobilnom ekranu */
+    }
+
+    .product-title {
+        font-size: 0.78rem;
+        min-height: 32px;
+    }
+}
