@@ -41,3 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     prikaziGrupu(trenutniIndex);
     pokreniTajmer();
 });
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('skrolovan');
+    } else {
+        header.classList.remove('skrolovan');
+    }
+});
