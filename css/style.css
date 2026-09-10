@@ -3,7 +3,7 @@
     --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
     --dark-bg: #09090b;          /* Pozadina */
     --card-bg: #121215;          /* Tamna podloga za kontejner */
-    --border-gold: rgba(201, 147, 59, 0.35);
+    --border-gold: rgba(201, 147, 59, 0.3);
 }
 
 * {
@@ -12,52 +12,53 @@
     box-sizing: border-box;
 }
 
+/* Pozadina za ceo sajt (Fiksirana slika) */
 body {
     background-color: #0d0d0d;
+    background-image: url('../img/hero4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Sprečava pomeranje slike pri skrolovanju */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-}
-
-/* hero sekcija */
-#hero {
-    background-image: url('../img/hero4.png');
-    background-size: cover;          /* Popunjava ceo ekran bez deformisanja */
-    background-position: center;     /* Centrira zlatni talas u sredinu */
-    background-repeat: no-repeat;
-    
-    width: 100%;
-    min-height: 100vh;               /* Visina preko celog ekrana */
-    padding: 40px 15px;
-    display: flex;
-    align-items: center;
 
     /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
 
-/* Animacija pulsiranja zlatne ivice */
-@keyframes goldPulse {
-    0% {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(201, 147, 59, 0.2);
-        border-color: rgba(201, 147, 59, 0.35);
+/* hero sekcija */
+#hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 15px 40px 15px; /* Dodat veći gornji padding da navigacija ne prekriva vrh */
+    display: flex;
+    align-items: center;
+    background: transparent; /* Prozirno da bi se videla fiksna pozadina */
+}
+
+/* Suptilna animacija elegantnog, finog zlatnog sjaja */
+@keyframes goldGlow {
+    0%, 100% {
+        border-color: rgba(201, 147, 59, 0.25);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(201, 147, 59, 0.1);
     }
     50% {
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.95), 0 0 25px rgba(201, 147, 59, 0.5);
-        border-color: rgba(201, 147, 59, 0.7);
-    }
-    100% {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(201, 147, 59, 0.2);
-        border-color: rgba(201, 147, 59, 0.35);
+        border-color: rgba(201, 147, 59, 0.45);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 22px rgba(201, 147, 59, 0.2);
     }
 }
 
-/* Glavni tamni kontejner sa zlatnim okvirom */
+/* Glavni tamni kontejner sa novim, profesionalnim ivicama */
 .hero-card-container {
-    background: rgba(12, 12, 15, 0.94);
+    background: rgba(12, 12, 15, 0.85);
     border: 1px solid var(--border-gold);
-    border-radius: 16px;
-    animation: goldPulse 4s infinite ease-in-out;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: goldGlow 6s ease-in-out infinite;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sub-title {
@@ -243,6 +244,170 @@ body {
     box-shadow: 0 0 12px rgba(230, 184, 106, 0.4);
 }
 
+/* --- STILOVI ZA NOVU SEKCIJU SA 6 KARTICA --- */
+.catalog-card {
+    background: #111115;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(201, 147, 59, 0.25);
+    border-color: var(--gold-main);
+}
+
+.badge-akcija {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--gold-main);
+    color: #000000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.catalog-img-wrap {
+    background: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.catalog-img-wrap img {
+    max-height: 140px;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .catalog-img-wrap img {
+    transform: scale(1.05);
+}
+
+.catalog-info {
+    padding: 15px;
+    background: #111115;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.catalog-title {
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-weight: 500;
+    min-height: 38px;
+    line-height: 1.3;
+}
+
+.catalog-prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-new-gold {
+    color: var(--gold-main);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.btn-odaberi {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-odaberi:hover {
+    background: var(--gold-main);
+    color: #000000;
+    border-color: var(--gold-main);
+}
+
+/* --- SEKCIJA: KVALITET BEZ KOMPROMISA --- */
+#prednosti {
+    background: transparent;
+}
+
+.feature-card {
+    background: rgba(18, 18, 21, 0.85);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-main);
+    box-shadow: 0 10px 30px rgba(201, 147, 59, 0.2);
+}
+
+.feature-icon {
+    width: 65px;
+    height: 65px;
+    background: rgba(201, 147, 59, 0.1);
+    border: 1px solid var(--gold-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--gold-main);
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--gold-main);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(201, 147, 59, 0.5);
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.feature-text {
+    font-size: 0.88rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* RESPONZIVNOST ZA TELEFONE */
 @media (max-width: 768px) {
     .hero-main-title {
@@ -260,16 +425,42 @@ body {
     }
 
     .product-img-wrap {
-        height: 140px; /* Prilagođena visina za telefone */
+        height: 140px;
     }
 
     .product-img-wrap img {
-        max-height: 120px; /* Veće slike na mobilnom ekranu */
+        max-height: 120px;
     }
 
     .product-title {
         font-size: 0.78rem;
         min-height: 32px;
+    }
+
+    .catalog-img-wrap img {
+        max-height: 100px;
+    }
+
+    .catalog-title {
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+
+    .btn-odaberi {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+
+    .feature-card {
+        padding: 25px 18px;
+    }
+    
+    .feature-title {
+        font-size: 1rem;
+    }
+
+    .feature-text {
+        font-size: 0.82rem;
     }
 }
 
@@ -278,7 +469,6 @@ header {
     background-color: transparent; 
     padding: 30px; 
 
-   /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
     position: fixed;
     top: 0;
     left: 0;
@@ -325,5 +515,3 @@ header.skrolovan {
 .navigacija ul li a:hover {
     color: #3C9DD0; 
 }
-
-/*kraj navigacije*/

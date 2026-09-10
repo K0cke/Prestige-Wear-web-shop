@@ -1,0 +1,205 @@
+:root {
+    --gold-main: #c9933b;
+    --border-gold: rgba(201, 147, 59, 0.3);
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- STRANICA KAKO NARUČITI --- */
+.steps-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Dodat kontejner koji je nedostajao u CSS-u */
+.hero-card-container {
+    background: rgba(18, 18, 21, 0.7);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background: var(--gold-main);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.steps-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 10px;
+}
+
+.steps-list::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 31px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold-main) 0%, rgba(201, 147, 59, 0.1) 100%);
+    z-index: 1;
+}
+
+.step-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateX(12px);
+    background: rgba(201, 147, 59, 0.05);
+    box-shadow: inset 2px 0 0 var(--gold-main);
+}
+
+.step-number {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-main);
+    color: #000000;
+    font-size: 1.15rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(201, 147, 59, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(201, 147, 59, 0.6);
+}
+
+.step-content {
+    padding-top: 2px;
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.step-item:hover .step-content h3 {
+    color: var(--gold-main);
+}
+
+.step-content p {
+    font-size: 0.92rem;
+    color: #b0b0b0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cta-box {
+    background: rgba(18, 18, 21, 0.9);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.cta-text {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* Dodato stilizovanje dugmeta */
+.btn-pogledaj-sve {
+    background-color: var(--gold-main);
+    color: #000000;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn-pogledaj-sve:hover {
+    background-color: #d6a858;
+    color: #000000;
+}
+
+/* --- NAVIGACIJA --- */
+header {
+    background-color: transparent; 
+    padding: 30px; 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header.skrolovan {
+    background-color: #0d385c; 
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.navigacija img {
+    height: 60px; 
+    object-fit: contain;
+}
+
+.navigacija ul {
+    display: flex;
+    gap: 40px; 
+    list-style: none;
+    justify-content: center; 
+    width: 100%;
+}
+
+.navigacija ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.navigacija ul li a:hover {
+    color: #3C9DD0; 
+}
