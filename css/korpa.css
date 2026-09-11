@@ -3,7 +3,7 @@
     --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
     --dark-bg: #09090b;          /* Pozadina */
     --card-bg: #121215;          /* Tamna podloga za kontejner */
-    --border-gold: rgba(201, 147, 59, 0.35);
+    --border-gold: rgba(201, 147, 59, 0.3);
 }
 
 * {
@@ -12,16 +12,26 @@
     box-sizing: border-box;
 }
 
+/* Pozadina za ceo sajt (Fiksirana slika) */
 body {
     background-color: #0d0d0d;
+    background-image: url('../img/hero4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Sprečava pomeranje slike pri skrolovanju */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
+
+    /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 
 
 
-/* --- NAVIGACIJA --- */
+/*NAVIGACIJA */
 header {
     background-color: transparent; 
     padding: 30px; 
@@ -94,25 +104,57 @@ header.skrolovan {
     color: var(--gold-main); 
 }
 
-/* Ispravka širine liste da bi korpa stala desno */
-.navigacija ul {
-    width: auto !important; /* Umesto 100% da ne gura elemente */
-    margin-bottom: 0;
-}
-
-/* Stil za ikonicu korpe u navigaciji */
-.cart-icon-btn {
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-}
-
-.cart-icon-btn:hover {
-    color: var(--gold-main) !important;
-    transform: scale(1.1);
-}
-
 /*kraj navigacije*/
 
+/* --- STRANICA KORPE --- */
+
+/* Kartica proizvoda u korpi */
+#korpa-sadrzaj .bg-dark {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#korpa-sadrzaj .bg-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Dugme za brisanje stavke (kanta) */
+.btn-outline-danger {
+    border-color: #ef4444;
+    color: #ef4444;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Okvir za ukupnu cenu i poručivanje */
+#korpa-checkout .bg-dark {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Dugme za završetak porudžbine */
+#zavrsi-porudzbinu-btn {
+    background-color: var(--gold-main) !important;
+    color: #000000 !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(201, 147, 59, 0.3);
+}
+
+#zavrsi-porudzbinu-btn:hover {
+    background-color: var(--gold-light) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(201, 147, 59, 0.5);
+}
 
 
 /* --- FOOTER --- */

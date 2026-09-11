@@ -1,0 +1,371 @@
+:root {
+    --gold-main: #c9933b;        /* Zlatna boja sa slike */
+    --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
+    --dark-bg: #09090b;          /* Pozadina */
+    --card-bg: #121215;          /* Tamna podloga za kontejner */
+    --border-gold: rgba(201, 147, 59, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pozadina za ceo sajt (Fiksirana slika) */
+body {
+    background-color: #0d0d0d;
+    background-image: url('../img/hero4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Sprečava pomeranje slike pri skrolovanju */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+
+    /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+
+
+
+/*NAVIGACIJA */
+header {
+    background-color: transparent; 
+    padding: 30px; 
+
+    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
+}
+
+header.skrolovan {
+    background-color: rgba(13, 13, 13, 0.95); /* Bogata tamna pozadina (nije providna) */
+    border-bottom: 2px solid var(--gold-main); /* Zlatni rub na dnu za luksuzan kontrast */
+    padding: 15px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Dublja senka da odvoji meni od sajta */
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.navigacija img {
+    height: 60px; 
+    object-fit: contain;
+}
+
+.navigacija ul {
+    display: flex;
+    gap: 40px; 
+    list-style: none;
+    justify-content: center; 
+    width: 100%;
+}
+
+.navigacija ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Skrivena linija ispod linka u početku */
+.navigacija ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Koliko je linija udaljena ispod teksta */
+    left: 0;
+    width: 0;     /* Početna širina je 0 (ne vidi se) */
+    height: 2px;  /* Debljina zlatne linije */
+    background-color: var(--gold-main); /* Vuče tvoju zlatnu boju */
+    transition: width 0.3s ease; /* Glatki efekat širenja */
+}
+
+/* Kada pređeš mišem, linija se širi na 100% širine teksta */
+.navigacija ul li a:hover::after {
+    width: 100%;
+}
+
+.navigacija ul li a:hover {
+    color: var(--gold-main); 
+}
+
+/*kraj navigacije*/
+
+/* Stilovi za Recenzije */
+.review-card {
+    overflow: hidden; /* Sprečava da slika iskoči iz okvira kad se zumira */
+}
+
+.review-card img {
+    height: auto; 
+    filter: grayscale(30%); /* Blago prigušene boje da se uklope u dark temu */
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover efekat kada korisnik pređe mišem preko slike */
+.review-card img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #0d0d0d;
+}
+
+
+
+
+/* --- STRANICA PROIZVODA --- */
+
+
+
+/* Okvir glavne slika */
+.product-main-image-box {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Kružići za izbor boja */
+.color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+.color-circle.active {
+    border-color: var(--gold-main);
+    box-shadow: 0 0 10px var(--gold-main);
+    transform: scale(1.1);
+}
+
+/* Hover efekat na malim slikama galerije */
+.gallery-thumb {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-thumb:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold-main) !important;
+}
+
+
+/* Okvir za sliku proizvoda */
+.product-image-box {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.product-image-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Badge kategorije iznad naziva */
+#proizvod-kategorija {
+    background-color: rgba(201, 147, 59, 0.15) !important;
+    color: var(--gold-main) !important;
+    border: 1px solid var(--border-gold);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Naziv proizvoda */
+#proizvod-naziv {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+/* Opis proizvoda */
+#proizvod-opis {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #d1d5db;
+}
+
+/* --- DUGMIĆI ZA VELIČINE --- */
+#proizvod-velicine .btn {
+    border-color: var(--border-gold);
+    color: #ffffff;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    min-width: 55px;
+}
+
+#proizvod-velicine .btn:hover {
+    border-color: var(--gold-main);
+    color: var(--gold-main);
+    background-color: rgba(201, 147, 59, 0.08);
+}
+
+/* Stil kada je veličina selektovana (aktivna) */
+#proizvod-velicine .btn.active,
+#proizvod-velicine .btn.btn-warning {
+    background-color: var(--gold-main) !important;
+    border-color: var(--gold-main) !important;
+    color: #000000 !important;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(201, 147, 59, 0.4);
+}
+
+/* --- DUGME "DODAJ U KORPU" --- */
+#dodaj-u-korpu {
+    background-color: var(--gold-main) !important;
+    color: #000000 !important;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(201, 147, 59, 0.3);
+}
+
+#dodaj-u-korpu:hover {
+    background-color: var(--gold-light) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(201, 147, 59, 0.5);
+}
+
+/* Poruka ukoliko proizvod nije pronađen (error state) */
+.col-12.text-center.py-5 h2 {
+    color: #ffffff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 60px 10% 20px 10%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer div {
+    flex: 1;
+}
+
+.footer h3 {
+    color: var(--gold-main);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-main);
+    display: inline-block;
+}
+
+.footer p, .footer ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+
+
+.footer ul li a:hover {
+    color: var(--gold-main);
+}
+
+/* --- IKONE SOCIJALNIH MREŽA --- */
+
+.mreze-kontejner {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 45px;            
+    height: 45px;           
+    background-color: #ffffff;
+    border-radius: 50%;     
+    text-decoration: none; 
+    
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
+    font-size: 20px;         
+    color: #061c30;          
+    transition: color 0.3s ease;
+    margin-right: auto;
+    margin-left: 10%;
+}
+
+
+.krug-mrezaig:hover {
+    background-color: #E1306C; 
+    transform: translateY(-3px);
+}
+
+.krug-mreza:hover i {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- KRAJ FOOTER --- */

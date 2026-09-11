@@ -52,4 +52,15 @@ window.addEventListener('scroll', function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
+    const badge = document.getElementById('broj-u-korpi');
+    
+    if (badge && korpa.length > 0) {
+        badge.innerText = korpa.length;
+        badge.style.display = 'inline-block';
+    }
+});
+
+
 

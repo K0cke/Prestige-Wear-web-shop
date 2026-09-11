@@ -15,22 +15,28 @@
 </head>
 <body>
         <header>
-        <div class="navigacija">
-            <a href="../index.html"><img src="../img/Logo.jpg" alt="Logo sajta"></a>
-            
-            <ul class="d-none d-lg-flex">
-                <li><a href="../index.html" class="aktivno">Početna</a></li>
-                <li><a href="./katalog.html">Katalog</a></li>
-                <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
-                <li><a href="./kontakt.html">Kontakt</a></li>
-                <li><a href="./onama.html" >O nama</a></li>
-            </ul>
+    <div class="navigacija">
+        <!-- Logo levo -->
+        <a href="../index.html"><img src="../img/Logo.jpg" alt="Logo sajta"></a>
+        
+        <!-- Linkovi u sredini -->
+        <ul class="d-none d-lg-flex mb-0">
+            <li><a href="../index.html" class="aktivno">Početna</a></li>
+            <li><a href="./katalog.html">Katalog</a></li>
+            <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
+            <li><a href="./kontakt.html">Kontakt</a></li>
+            <li><a href="./onama.html">O nama</a></li>
+        </ul>
 
-            <button class="hamburger-btn d-lg-none" id="otvori-meni">
-                 <i class="fas fa-bars ms-1"></i>
-            </button>
+        <!-- Korpa desno sa bedžom za broj artikala -->
+        <div class="nav-actions">
+            <a href="./korpa.html" class="cart-icon-btn position-relative text-white text-decoration-none p-2">
+                <i class="fas fa-shopping-bag fs-4"></i>
+                <span id="broj-u-korpi" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark fw-bold" style="display: none; font-size: 0.65rem;">0</span>
+            </a>
         </div>
-    </header>
+    </div>
+</header>
 
 
 <!-- O NAMA SEKCIJA START -->
