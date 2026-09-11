@@ -468,21 +468,18 @@ body {
 header {
     background-color: transparent; 
     padding: 30px; 
-
-    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
+    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
 }
 
 header.skrolovan {
-    background-color: rgba(13, 13, 13, 0.95); /* Bogata tamna pozadina (nije providna) */
-    border-bottom: 2px solid var(--gold-main); /* Zlatni rub na dnu za luksuzan kontrast */
+    background-color: #0d385c; 
     padding: 15px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Dublja senka da odvoji meni od sajta */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
 }
 
 .navigacija {
@@ -513,28 +510,8 @@ header.skrolovan {
     font-size: 20px;
     color: #FFFFFF;
     transition: color 0.3s ease;
-    position: relative;
-}
-
-/* Skrivena linija ispod linka u početku */
-.navigacija ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Koliko je linija udaljena ispod teksta */
-    left: 0;
-    width: 0;     /* Početna širina je 0 (ne vidi se) */
-    height: 2px;  /* Debljina zlatne linije */
-    background-color: var(--gold-main); /* Vuče tvoju zlatnu boju */
-    transition: width 0.3s ease; /* Glatki efekat širenja */
-}
-
-/* Kada pređeš mišem, linija se širi na 100% širine teksta */
-.navigacija ul li a:hover::after {
-    width: 100%;
 }
 
 .navigacija ul li a:hover {
-    color: var(--gold-main); 
+    color: #3C9DD0; 
 }
-
-/*kraj navigacije*/
