@@ -464,22 +464,25 @@ body {
     }
 }
 
-/* --- NAVIGACIJA --- */
+
 header {
     background-color: transparent; 
     padding: 30px; 
-    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
+
+    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
 }
 
 header.skrolovan {
-    background-color: #0d385c; 
+    background-color: rgba(13, 13, 13, 0.95); /* Bogata tamna pozadina (nije providna) */
+    border-bottom: 2px solid var(--gold-main); /* Zlatni rub na dnu za luksuzan kontrast */
     padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Dublja senka da odvoji meni od sajta */
 }
 
 .navigacija {
@@ -510,8 +513,191 @@ header.skrolovan {
     font-size: 20px;
     color: #FFFFFF;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Skrivena linija ispod linka u početku */
+.navigacija ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Koliko je linija udaljena ispod teksta */
+    left: 0;
+    width: 0;     /* Početna širina je 0 (ne vidi se) */
+    height: 2px;  /* Debljina zlatne linije */
+    background-color: var(--gold-main); /* Vuče tvoju zlatnu boju */
+    transition: width 0.3s ease; /* Glatki efekat širenja */
+}
+
+/* Kada pređeš mišem, linija se širi na 100% širine teksta */
+.navigacija ul li a:hover::after {
+    width: 100%;
 }
 
 .navigacija ul li a:hover {
-    color: #3C9DD0; 
+    color: var(--gold-main); 
 }
+
+/*kraj navigacije*/
+
+/* Stilovi za Recenzije */
+.review-card {
+    overflow: hidden; /* Sprečava da slika iskoči iz okvira kad se zumira */
+}
+
+.review-card img {
+    height: auto; 
+    filter: grayscale(30%); /* Blago prigušene boje da se uklope u dark temu */
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover efekat kada korisnik pređe mišem preko slike */
+.review-card img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #0d0d0d;
+}
+
+/*kraj stilova za recenzije*/
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 60px 10% 20px 10%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer div {
+    flex: 1;
+}
+
+.footer h3 {
+    color: var(--gold-main);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-main);
+    display: inline-block;
+}
+
+.footer p, .footer ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+
+
+.footer ul li a:hover {
+    color: var(--gold-main);
+}
+
+/* --- IKONE SOCIJALNIH MREŽA --- */
+
+.mreze-kontejner {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 45px;            
+    height: 45px;           
+    background-color: #ffffff;
+    border-radius: 50%;     
+    text-decoration: none; 
+    
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
+    font-size: 20px;         
+    color: #061c30;          
+    transition: color 0.3s ease;
+    margin-right: auto;
+    margin-left: 10%;
+}
+
+
+.krug-mrezaig:hover {
+    background-color: #E1306C; 
+    transform: translateY(-3px);
+}
+
+.krug-mreza:hover i {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- KRAJ FOOTER --- */
+
+/* Stilovi za Recenzije */
+.review-card {
+    overflow: hidden; /* Sprečava da slika iskoči iz okvira kad se zumira */
+}
+
+.review-card img {
+    height: auto; 
+    filter: grayscale(30%); /* Blago prigušene boje da se uklope u dark temu */
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover efekat kada korisnik pređe mišem preko slike */
+.review-card img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #0d0d0d;
+}
+
+/*kraj stilova za recenzije*/
