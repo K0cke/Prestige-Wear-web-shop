@@ -9,33 +9,33 @@ window.addEventListener('scroll', function() {
     
     
     
-    const scriptURL = 'UBACI_DRUGAROV_LINK_OVDE'; 
+    // Ovde nalepi dugački link koji dobijete nakon Deploy-a
+    const scriptURL = 'UBACI_WEB_APP_URL_HERE'; 
+    
     const form = document.getElementById('google-sheet-forma');
     const btn = document.getElementById('submit-btn');
 
-    if(form) {
+    if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
-            btn.innerHTML = "Slanje...";
             
-            if(scriptURL === 'UBACI_DRUGAROV_LINK_OVDE') {
-                setTimeout(() => {
-                    alert("Test uspešan: Forma radi! (Podaci će ići u Excel kad ubacite link)");
-                    form.reset();
-                    btn.innerHTML = "Pošalji";
-                }, 1000);
-                return;
-            }
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = "Slanje...";
+            btn.disabled = true;
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert("Poruka je uspešno poslata!");
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Hvala! Poruka je uspešno poslata.");
                     form.reset();
-                    btn.innerHTML = "Pošalji";
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
                 })
                 .catch(error => {
-                    alert("Došlo je do greške. Pokušajte ponovo.");
-                    btn.innerHTML = "Pošalji";
+                    alert("Došlo je do greške prilikom slanja. Pokušajte ponovo.");
+                    console.error('Greška!', error.message);
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
                 });
         });
     }

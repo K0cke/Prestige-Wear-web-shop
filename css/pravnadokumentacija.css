@@ -1,0 +1,298 @@
+:root {
+    --gold-main: #c9933b;        /* Zlatna boja sa slike */
+    --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
+    --dark-bg: #09090b;          /* Pozadina */
+    --card-bg: #121215;          /* Tamna podloga za kontejner */
+    --border-gold: rgba(201, 147, 59, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pozadina za ceo sajt (Fiksirana slika) */
+body {
+    background-color: #0d0d0d;
+    background-image: url('../img/hero4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Sprečava pomeranje slike pri skrolovanju */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+
+    /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+
+/*NAVIGACIJA */
+header {
+    background-color: transparent; 
+    padding: 30px; 
+
+    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
+}
+
+header.skrolovan {
+    background-color: rgba(13, 13, 13, 0.95); /* Bogata tamna pozadina (nije providna) */
+    border-bottom: 2px solid var(--gold-main); /* Zlatni rub na dnu za luksuzan kontrast */
+    padding: 15px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Dublja senka da odvoji meni od sajta */
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.navigacija img {
+    height: 60px; 
+    object-fit: contain;
+}
+
+.navigacija ul {
+    display: flex;
+    gap: 40px; 
+    list-style: none;
+    justify-content: center; 
+    width: 100%;
+}
+
+.navigacija ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Skrivena linija ispod linka u početku */
+.navigacija ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Koliko je linija udaljena ispod teksta */
+    left: 0;
+    width: 0;     /* Početna širina je 0 (ne vidi se) */
+    height: 2px;  /* Debljina zlatne linije */
+    background-color: var(--gold-main); /* Vuče tvoju zlatnu boju */
+    transition: width 0.3s ease; /* Glatki efekat širenja */
+}
+
+/* Kada pređeš mišem, linija se širi na 100% širine teksta */
+.navigacija ul li a:hover::after {
+    width: 100%;
+}
+
+.navigacija ul li a:hover {
+    color: var(--gold-main); 
+}
+
+/*kraj navigacije*/
+
+
+
+
+
+
+/* Stilovi za Politiku privatnosti i pravne stranice */
+.legal-container {
+    max-width: 960px;
+}
+
+.legal-badge {
+    color: var(--gold-main, #ffd700);
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+}
+
+.legal-main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #ffffff;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+.legal-card {
+    background-color: #050505;
+}
+
+.legal-intro-text {
+    color: #f4f4f5;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.legal-section {
+    background-color: #0d0d0d;
+    transition: border-color 0.2s ease;
+}
+
+.legal-section:hover {
+    border-color: rgba(255, 215, 0, 0.3) !important;
+}
+
+.legal-section-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legal-num {
+    color: var(--gold-main, #ffd700);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+}
+
+.legal-text {
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.legal-list {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.legal-list li {
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.legal-list li strong {
+    color: #ffffff;
+}
+
+.legal-link {
+    color: var(--gold-main, #ffd700);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legal-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 60px 10% 20px 10%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer div {
+    flex: 1;
+}
+
+.footer h3 {
+    color: var(--gold-main);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-main);
+    display: inline-block;
+}
+
+.footer p, .footer ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+
+
+.footer ul li a:hover {
+    color: var(--gold-main);
+}
+
+/* --- IKONE SOCIJALNIH MREŽA --- */
+
+.mreze-kontejner {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 45px;            
+    height: 45px;           
+    background-color: #ffffff;
+    border-radius: 50%;     
+    text-decoration: none; 
+    
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
+    font-size: 20px;         
+    color: #061c30;          
+    transition: color 0.3s ease;
+    margin-right: auto;
+    margin-left: 10%;
+}
+
+
+.krug-mrezaig:hover {
+    background-color: #E1306C; 
+    transform: translateY(-3px);
+}
+
+.krug-mreza:hover i {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- KRAJ FOOTER --- */
