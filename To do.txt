@@ -4,5 +4,3 @@ Namestiti lepo da velicina logo-a, hamburger menija i korpe bude jednaka na svim
 Napraviti i Recenzije i preporuke stranicu
 (OPCIONALNO) Napraviti vodic za velicine stranicu (kad se ode na proizvod ima desno) - ako se odlucimo da necemo da pravimo to samo cemo da obrisemo to skroz
 Probati naci neke greske i njih ispraviti
-
-test test
