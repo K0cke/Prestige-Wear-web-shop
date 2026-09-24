@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Korpa za kupovinu | Prestige Wear</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/proizvod.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/733505578_18134725846534636_4153955688095906265_n.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/Logo.jpg" type="image/x-icon">
+</head>
+<body>
+    
+         <header>
+    <div class="navigacija d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="../index.html"><img src="../img/Logo.jpg" alt="Logo sajta" style="height: 50px; border-radius: 50%;"></a>
+        
+        <!-- Desktop Linkovi -->
+        <ul class="d-none d-lg-flex mb-0 list-unstyled gap-4">
+            <li><a href="../index.html" class=" text-white text-decoration-none">Početna</a></li>
+            <li><a href="./katalog.html" class="text-white text-decoration-none">Katalog</a></li>
+            <li><a href="./kakonaruciti.html" class="aktivno text-white text-decoration-none">Kako naručiti</a></li>
+            <li><a href="./kontakt.html" class="text-white text-decoration-none">Kontakt</a></li>
+            <li><a href="./onama.html" class="text-white text-decoration-none">O nama</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+            <!-- Hamburger meni dugme za mobilne -->
+            <button class="hamburger-btn d-lg-none" id="otvori-meni">
+                 <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Korpa -->
+            <div class="nav-actions">
+                <a href="./korpa.html" class="cart-icon-btn position-relative text-white text-decoration-none p-2">
+                    <i class="fas fa-shopping-bag fs-4"></i>
+                    <span id="broj-u-korpi" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark fw-bold" style="display: none; font-size: 0.65rem;">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- FULLSCREEN OVERLAY MENI (Stoji sakriven dok se ne klikne) -->
+<div class="overlay-meni" id="mobilniOverlay">
+    <div class="overlay-top">
+        <img src="../img/Logo.jpg" alt="Logo sajta" style="border-radius: 50%;">
+        <button class="zatvori-meni" id="zatvori-meni">
+            ZATVORI <i class="fas fa-xmark"></i>
+        </button>
+    </div>
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="../index.html" >Početna</a></li>
+            <li><a href="./katalog.html" class="aktivno-overlay">Katalog</a></li>
+            <li><a href="./kakonaruciti.html" >Kako naručiti</a></li>
+            <li><a href="./kontakt.html">Kontakt</a></li>
+            <li><a href="./onama.html">O nama</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    <section class="py-5" style="padding-top: 140px !important;">
+    <div class="container">
+        <div class="row g-5 align-items-start" id="proizvod-sadrzaj">
+            
+            <!-- LEVA STRANA: Glavna slika i galerija malih slika -->
+            <div class="col-lg-6">
+                <div class="product-main-image-box p-3 rounded-4 mb-3">
+                    <img id="proizvod-slika" src="" alt="Proizvod" class="img-fluid rounded-3 w-100 object-fit-cover" style="max-height: 500px;">
+                </div>
+                <!-- Galerija slika (ispod glavne) -->
+                <div class="d-flex gap-3" id="proizvod-galerija">
+                    <!-- JS ubacuje male slike ovde -->
+                </div>
+            </div>
+
+            <!-- DESNA STRANA: Detalji, boje, veličine, dugmići -->
+            <div class="col-lg-6">
+                <span class="badge mb-2 text-uppercase fw-bold" id="proizvod-kategorija">Prestige Wear</span>
+                <h1 id="proizvod-naziv" class="text-white display-6 fw-bold mb-2"></h1>
+                
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <h3 id="proizvod-cena" class="fs-3 fw-bold mb-0" style="color: var(--gold-main);"></h3>
+                    <span id="proizvod-stara-cena" class="text-decoration-line-through text-muted fs-5"></span>
+                </div>
+
+                <!-- Izbor boja -->
+                <div class="mb-3">
+                    <label class="form-label text-white fw-semibold mb-2">Boja: <span id="izabrana-boja-naziv" class="text-warning"></span></label>
+                    <div id="proizvod-boje" class="d-flex gap-3">
+                        <!-- JS ubacuje kružiće za boje -->
+                    </div>
+                </div>
+
+                <!-- Izbor veličine -->
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="form-label text-white fw-semibold mb-0">Veličina:</label>
+                        <a href="#" class="text-warning text-decoration-none small">Vodič za veličine</a>
+                    </div>
+                    <div id="proizvod-velicine" class="d-flex gap-2 flex-wrap">
+                        <!-- JS ubacuje dugmiće za veličine -->
+                    </div>
+                </div>
+
+                <!-- Akciona dugmad -->
+                <div class="d-grid gap-2 mb-4">
+                    <button class="btn btn-warning py-3 fw-bold text-uppercase rounded-3" id="poruci-odmah">
+                        Poruči odmah
+                    </button>
+                    <button class="btn btn-outline-light py-3 fw-bold text-uppercase rounded-3" id="dodaj-u-korpu">
+                        <i class="fas fa-shopping-bag me-2"></i> Dodaj u korpu
+                    </button>
+                </div>
+
+                <!-- Social Proof (gledaju ljudi) -->
+                <div class="p-3 rounded-3 mb-4 bg-dark border border-secondary border-opacity-25 d-flex align-items-center gap-2 text-light small">
+                    <i class="fas fa-eye text-warning"></i>
+                    <span>Trenutno <strong class="text-white">12 ljudi</strong> gleda ovaj model</span>
+                </div>
+
+                <!-- Ikonice pogodnosti -->
+                <div class="row text-center py-3 border-top border-bottom border-secondary border-opacity-25 mb-4 g-2">
+                    <div class="col-4">
+                        <i class="fas fa-truck text-warning fs-4 mb-1"></i>
+                        <p class="small text-light mb-0">Brza dostava<br>24-48h</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="fas fa-gem text-warning fs-4 mb-1"></i>
+                        <p class="small text-light mb-0">Najbolji<br>kvalitet</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="fas fa-sync-alt text-warning fs-4 mb-1"></i>
+                        <p class="small text-light mb-0">Laka zamena<br>veličine</p>
+                    </div>
+                </div>
+
+                <!-- Opis -->
+                <p id="proizvod-opis" class="text-light opacity-75"></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<footer>
+        <div class="footer">
+            <div>
+                <h3>Kontakt</h3>
+               <p>Telefon: <a href="tel:+381648797408" style="color: #ccc; text-decoration: none;">064 879 7408</a> </p>
+                
+                <p>Email: <a href="mailto:etstesla@etstesla.ni.ac.rs" target="_blank" style="color: #ccc; text-decoration: none;">etstesla@etstesla.ni.ac.rs</a></p>
+            </div>
+            <div id="korisnilinkovi">
+                <h3>Korisni linkovi</h3>
+                <ul>
+                    <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
+                    <li><a href="./katalog.html">Katalog</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                    <li><a href="./onama.html">O nama</a></li>
+                    <li><a href="./politikaprivatnosti.html">Politika privatnosti</a></li>
+                    <li><a href="./uslovikoriscenja.html">Uslovi korišćenja</a></li>
+                    <li><a href="./zamenareklamacija.html">Zamena i reklamacija</a></li>
+                </ul>
+            </div>
+
+            <div id="socijalnemreze">
+                <h3>Pratite nas</h3>
+                <div class="mreze-kontejner">
+                    </a>
+                    <a class="krug-mrezaig" href="https://www.instagram.com/prestigewear.rss/" target="_blank" >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Prestige Wear. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/proizvod.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nama | Prestige Wear</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/onama.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/Logo.jpg" type="image/x-icon">
+</head>
+<body>
+        <header>
+    <div class="navigacija d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="../index.html"><img src="../img/Logo.jpg" alt="Logo sajta" style="height: 50px; border-radius: 50%;"></a>
+        
+        <!-- Desktop Linkovi -->
+        <ul class="d-none d-lg-flex mb-0 list-unstyled gap-4">
+            <li><a href="../index.html" class=" text-white text-decoration-none">Početna</a></li>
+            <li><a href="./katalog.html" class="text-white text-decoration-none">Katalog</a></li>
+            <li><a href="./kakonaruciti.html" class="aktivno text-white text-decoration-none">Kako naručiti</a></li>
+            <li><a href="./kontakt.html" class="text-white text-decoration-none">Kontakt</a></li>
+            <li><a href="./onama.html" class="text-white text-decoration-none">O nama</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+            <!-- Hamburger meni dugme za mobilne -->
+            <button class="hamburger-btn d-lg-none" id="otvori-meni">
+                 <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Korpa -->
+            <div class="nav-actions">
+                <a href="./korpa.html" class="cart-icon-btn position-relative text-white text-decoration-none p-2">
+                    <i class="fas fa-shopping-bag fs-4"></i>
+                    <span id="broj-u-korpi" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark fw-bold" style="display: none; font-size: 0.65rem;">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- FULLSCREEN OVERLAY MENI (Stoji sakriven dok se ne klikne) -->
+<div class="overlay-meni" id="mobilniOverlay">
+    <div class="overlay-top">
+        <img src="../img/Logo.jpg" alt="Logo sajta" style="border-radius: 50%;">
+        <button class="zatvori-meni" id="zatvori-meni">
+            ZATVORI <i class="fas fa-xmark"></i>
+        </button>
+    </div>
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="../index.html" >Početna</a></li>
+            <li><a href="./katalog.html">Katalog</a></li>
+            <li><a href="./kakonaruciti.html" >Kako naručiti</a></li>
+            <li><a href="./kontakt.html">Kontakt</a></li>
+            <li><a href="./onama.html" class="aktivno-overlay" >O nama</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- O NAMA SEKCIJA START -->
+<section class="py-5 text-white" style="margin-top: 120px; background-color: #0d0d0d;">
+    <div class="container py-5">
+        
+        <!-- Naslov sekcije -->
+        <div class="text-center mb-5">
+            <span class="text-uppercase fw-bold" style="color: var(--gold-main); letter-spacing: 3px; font-size: 0.9rem;">• KO SMO MI •</span>
+            <h2 class="mt-2 text-white" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 3rem;">
+                STANDARD U ULIČNOJ MODI
+            </h2>
+        </div>
+
+        <!-- Glavni sadržaj u dve kolone -->
+        <div class="row align-items-center g-5" style="margin-bottom: 8% !important;">
+            
+            <!-- Leva kolona: Priča / Vizija -->
+            <div class="col-lg-6">
+                <p class="text-light mb-4" style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9;">
+                    <strong class="text-white">Prestige Wear</strong> nije samo brend garderobe već je pokret stvoren za sve koji cene beskompromisni kvalitet, vrhunski kroj i prepoznatljivu estetiku ulične kulture. Naša misija je jednostavna: donosimo vam najbolje iz sveta modernih materijala, sa posebnim akcentom na apsolutnu legendu moderne udobnosti — <span class="text-white fw-bold">Nike Tech Fleece</span>.
+                </p>
+                <p class="text-light mb-4" style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9;">
+                    Fokusirani smo na svaki detalj, od preciznih šavova do vrhunske usluge i brze dostave. Želimo da se svako ko nosi našu opremu oseća prijatno, bez obzira da li je na ulici, u pokretu ili opuštenom treningu.
+                </p>
+                
+                <div class="d-flex gap-4 mt-4">
+                    <div>
+                        <h3 class="mb-1" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold-main) !important;">100%</h3>
+                        <p class="text-white small mb-0 opacity-75">Posvećenost kvalitetu</p>
+                    </div>
+                    <div class="border-start border-secondary opacity-50"></div>
+                    <div>
+                        <h3 class="mb-1" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold-main) !important;">24/7</h3>
+                        <p class="text-white small mb-0 opacity-75">Podrška kupcima</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desna kolona: Istaknute kartice sa vrednostima -->
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    
+                    <!-- Kartica 1 -->
+                    <div class="col-12">
+                        <div class="p-4 rounded-4 border border-secondary border-opacity-50 bg-black h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <i class="fa-solid fa-gem fs-4" style="color: var(--gold-main);"></i>
+                                <h4 class="text-white mb-0" style="font-size: 1.1rem; font-weight: 600;">Vrhunski kvalitet materijala</h4>
+                            </div>
+                            <p class="text-light mb-0 small opacity-85" style="line-height: 1.6;">
+                                Biramo komade koji pružaju savršeni balans toplote, lakoće i modernog vizuelnog identiteta.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kartica 2 -->
+                    <div class="col-12">
+                        <div class="p-4 rounded-4 border border-secondary border-opacity-50 bg-black h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <i class="fa-solid fa-bolt fs-4" style="color: var(--gold-main);"></i>
+                                <h4 class="text-white mb-0" style="font-size: 1.1rem; font-weight: 600;">Streetwear estetika</h4>
+                            </div>
+                            <p class="text-light mb-0 small opacity-85" style="line-height: 1.6;">
+                                Spoj tamnih tonova i urbanog sportskog duha koji nikada ne izlazi iz mode.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kartica 3 -->
+                    <div class="col-12">
+                        <div class="p-4 rounded-4 border border-secondary border-opacity-50 bg-black h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <i class="fa-solid fa-shield-heart fs-4" style="color: var(--gold-main);"></i>
+                                <h4 class="text-white mb-0" style="font-size: 1.1rem; font-weight: 600;">Sigurna kupovina</h4>
+                            </div>
+                            <p class="text-light mb-0 small opacity-85" style="line-height: 1.6;">
+                                Transparentno poslovanje, laka komunikacija i podrška u svakom koraku od narudžbine do preuzimanja paketa.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- O NAMA SEKCIJA END -->
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h3>Kontakt</h3>
+               <p>Telefon: <a href="tel:+381648797408" style="color: #ccc; text-decoration: none;">064 879 7408</a> </p>
+                
+                <p>Email: <a href="mailto:kontakt@prestigewear.rs" target="_blank" style="color: #ccc; text-decoration: none;">kontakt@prestigewear.rs</a></p>
+            </div>
+            <div id="korisnilinkovi">
+                <h3>Korisni linkovi</h3>
+                <ul>
+                    <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
+                    <li><a href="./katalog.html">Katalog</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                    <li><a href="./onama.html">O nama</a></li>
+                    <li><a href="./politikaprivatnosti.html">Politika privatnosti</a></li>
+                    <li><a href="./uslovikoriscenja.html">Uslovi korišćenja</a></li>
+                    <li><a href="./zamenareklamacija.html">Zamena i reklamacija</a></li>
+                </ul>
+            </div>
+
+            <div id="socijalnemreze">
+                <h3>Pratite nas</h3>
+                <div class="mreze-kontejner">
+                    </a>
+                    <a class="krug-mrezaig" href="https://www.instagram.com/prestigewear.rss/" target="_blank" >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Prestige Wear. Sva prava zadržana.</p>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog | Prestige Wear</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Dodat FontAwesome za ikonicu korpe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/onama.css">
+    <link rel="stylesheet" href="../css/katalog.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/Logo.jpg" type="image/x-icon">
+</head>
+<body>
+
+            <header>
+    <div class="navigacija d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="../index.html"><img src="../img/Logo.jpg" alt="Logo sajta" style="height: 50px; border-radius: 50%;"></a>
+        
+        <!-- Desktop Linkovi -->
+        <ul class="d-none d-lg-flex mb-0 list-unstyled gap-4">
+            <li><a href="../index.html" class=" text-white text-decoration-none">Početna</a></li>
+            <li><a href="./katalog.html" class="text-white text-decoration-none">Katalog</a></li>
+            <li><a href="./kakonaruciti.html" class="aktivno text-white text-decoration-none">Kako naručiti</a></li>
+            <li><a href="./kontakt.html" class="text-white text-decoration-none">Kontakt</a></li>
+            <li><a href="./onama.html" class="text-white text-decoration-none">O nama</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+            <!-- Hamburger meni dugme za mobilne -->
+            <button class="hamburger-btn d-lg-none" id="otvori-meni">
+                 <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Korpa -->
+            <div class="nav-actions">
+                <a href="./korpa.html" class="cart-icon-btn position-relative text-white text-decoration-none p-2">
+                    <i class="fas fa-shopping-bag fs-4"></i>
+                    <span id="broj-u-korpi" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark fw-bold" style="display: none; font-size: 0.65rem;">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- FULLSCREEN OVERLAY MENI (Stoji sakriven dok se ne klikne) -->
+<div class="overlay-meni" id="mobilniOverlay">
+    <div class="overlay-top">
+        <img src="../img/Logo.jpg" alt="Logo sajta" style="border-radius: 50%;">
+        <button class="zatvori-meni" id="zatvori-meni">
+            ZATVORI <i class="fas fa-xmark"></i>
+        </button>
+    </div>
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="../index.html" >Početna</a></li>
+            <li><a href="./katalog.html" class="aktivno-overlay">Katalog</a></li>
+            <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
+            <li><a href="./kontakt.html">Kontakt</a></li>
+            <li><a href="./onama.html">O nama</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+    <main>
+        <hero class="katalog-hero">
+            <div class="katalog-hero-sadrzaj">
+                <span class="mali-naslov">PRESTIGE WEAR — NOVA KOLEKCIJA</span>
+                <h1>PRONAĐI SVOJ<br><span>STIL.</span></h1>
+                <p>Pažljivo odabrani komadi za svaki dan.</p>
+            </div>
+        </hero>
+
+        <section class="katalog container">
+            <div class="naslov-red">
+                <div>
+                    <span class="mali-naslov">ISTAKNUTA PONUDA</span>
+                    <h2>NAŠ KATALOG</h2>
+                </div>
+                <span class="broj-proizvoda" id="broj-proizvoda">16 proizvoda</span>
+            </div>
+
+            <div class="filteri">
+                <label class="pretraga">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="pretraga" type="search" placeholder="Pretraži proizvode..." aria-label="Pretraži proizvode">
+                </label>
+
+                <label class="filter-kontrola">
+                    <span>Kategorija</span>
+                    <select id="kategorija" aria-label="Izaberi kategoriju">
+                        <option value="sve">Sve kategorije</option>
+                        <option value="kompleti">Kompleti</option>
+                        <option value="gornji">Gornji deo</option>
+                        <option value="donji">Donji deo</option>
+                    </select>
+                </label>
+
+                <label class="filter-kontrola">
+                    <span>Sortiraj</span>
+                    <select id="sortiranje" aria-label="Sortiraj proizvode">
+                        <option value="podrazumevano">Preporučeno</option>
+                        <option value="rastuce">Cena: niža ka višoj</option>
+                        <option value="opadajuce">Cena: viša ka nižoj</option>
+                        <option value="naziv">Naziv: A–Š</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="proizvodi-grid" id="proizvodi-grid">
+                <!-- Proizvod 1 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Reflective Beli" data-category="kompleti" data-price="7490">
+                    <div class="slika-proizvoda">
+                        <span class="oznaka">BESTSELLER</span>
+                        <img src="../img/reflectivetechbeli.webp" alt="Nike Tech Fleece Reflective beli">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">KOMPLET</span>
+                        <h3>Nike Tech Fleece Reflective Beli</h3>
+                        <div class="cena-red"><strong>7.490 RSD</strong><span class="stara-cena">12.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-reflective-beli">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 2 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Reflective Crni" data-category="kompleti" data-price="7490">
+                    <div class="slika-proizvoda">
+                        <span class="oznaka">BESTSELLER</span>
+                        <img src="../img/reflectivetechcrni.webp" alt="Nike Tech Fleece Reflective crni">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">KOMPLET</span>
+                        <h3>Nike Tech Fleece Reflective Crni</h3>
+                        <div class="cena-red"><strong>7.490 RSD</strong><span class="stara-cena">12.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-reflective-crni">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 3 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crni" data-category="kompleti" data-price="6990">
+                    <div class="slika-proizvoda">
+                        <span class="oznaka">NOVO</span>
+                        <img src="../img/nike tech fleece crni.webp" alt="Nike Tech Fleece crni komplet">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">KOMPLET</span>
+                        <h3>Nike Tech Fleece Crni</h3>
+                        <div class="cena-red"><strong>6.990 RSD</strong><span class="stara-cena">11.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crni">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 4 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crno Sivi" data-category="kompleti" data-price="6990">
+                    <div class="slika-proizvoda">
+                        <span class="oznaka">NOVO</span>
+                        <img src="../img/techfleececrnosivikomplet.jpg" alt="Nike Tech Fleece crno sivi komplet">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">KOMPLET</span>
+                        <h3>Nike Tech Fleece Crno Sivi</h3>
+                        <div class="cena-red"><strong>6.990 RSD</strong><span class="stara-cena">11.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crno-sivi">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 5 -->
+                <article class="proizvod-kartica" data-name="Nike Fleece Sivi" data-category="kompleti" data-price="6490">
+                    <div class="slika-proizvoda">
+                        <span class="oznaka">AKCIJA</span>
+                        <img src="../img/techfleecesivijkomplet.jpg" alt="Nike Fleece sivi komplet">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">KOMPLET</span>
+                        <h3>Nike Fleece Sivi</h3>
+                        <div class="cena-red"><strong>6.490 RSD</strong><span class="stara-cena">10.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=fleece-sivi">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 6 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crni Gornji Deo" data-category="gornji" data-price="3990">
+                    <div class="slika-proizvoda">
+                        <img src="../img/nike tech fleece gornji deo.jpg" alt="Nike Tech Fleece crni gornji deo">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">GORNJI DEO</span>
+                        <h3>Nike Tech Fleece Crni Gornji Deo</h3>
+                        <div class="cena-red"><strong>3.990 RSD</strong><span class="stara-cena">6.490 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crni-gornji">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 7 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crno Sivi Gornji Deo" data-category="gornji" data-price="3990">
+                    <div class="slika-proizvoda">
+                        <img src="../img/techfleececrnosivigornji.jpg" alt="Nike Tech Fleece crno sivi gornji deo">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">GORNJI DEO</span>
+                        <h3>Nike Tech Fleece Crno Sivi Gornji Deo</h3>
+                        <div class="cena-red"><strong>3.990 RSD</strong><span class="stara-cena">6.490 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crno-sivi-gornji">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 8 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crno Sivi Donji Deo" data-category="donji" data-price="3490">
+                    <div class="slika-proizvoda">
+                        <img src="../img/techfleececrnosividonjideo.jpg" alt="Nike Tech Fleece crno sivi donji deo">
+                    </div>
+                    <div class="proizvod-info">
+                        <span class="proizvod-kategorija">DONJI DEO</span>
+                        <h3>Nike Tech Fleece Crno Sivi Donji Deo</h3>
+                        <div class="cena-red"><strong>3.490 RSD</strong><span class="stara-cena">5.990 RSD</span></div>
+                        <a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crno-sivi-donji">Pogledaj detalje <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Proizvod 9 -->
+                <article class="proizvod-kartica" data-name="Tech Fleece Reflective Beli Gornji Deo" data-category="gornji" data-price="3990">
+                    <div class="slika-proizvoda"><img src="../img/reflectivetechbeli.webp" alt="Tech Fleece reflective beli gornji deo"></div>
+                    <div class="proizvod-info"><span class="proizvod-kategorija">GORNJI DEO</span><h3>Tech Fleece Reflective Beli Gornji Deo</h3><div class="cena-red"><strong>3.990 RSD</strong><span class="stara-cena">6.490 RSD</span></div><a class="proizvod-dugme" href="./proizvod.html?id=tech-reflective-beli-gornji">Pogledaj detalje <span>→</span></a></div>
+                </article>
+
+                <!-- Proizvod 10 -->
+                <article class="proizvod-kartica" data-name="Tech Fleece Reflective Crni Gornji Deo" data-category="gornji" data-price="3990">
+                    <div class="slika-proizvoda"><img src="../img/reflectivetechcrni.webp" alt="Tech Fleece reflective crni gornji deo"></div>
+                    <div class="proizvod-info"><span class="proizvod-kategorija">GORNJI DEO</span><h3>Tech Fleece Reflective Crni Gornji Deo</h3><div class="cena-red"><strong>3.990 RSD</strong><span class="stara-cena">6.490 RSD</span></div><a class="proizvod-dugme" href="./proizvod.html?id=tech-reflective-crni-gornji">Pogledaj detalje <span>→</span></a></div>
+                </article>
+
+                <!-- Proizvod 11 -->
+                <article class="proizvod-kartica" data-name="Nike Tech Fleece Crni Donji Deo" data-category="donji" data-price="3490">
+                    <div class="slika-proizvoda"><img src="../img/nike tech fleece crni.webp" alt="Nike Tech Fleece crni donji deo"></div>
+                    <div class="proizvod-info"><span class="proizvod-kategorija">DONJI DEO</span><h3>Nike Tech Fleece Crni Donji Deo</h3><div class="cena-red"><strong>3.490 RSD</strong><span class="stara-cena">5.990 RSD</span></div><a class="proizvod-dugme" href="./proizvod.html?id=tech-fleece-crni-donji">Pogledaj detalje <span>→</span></a></div>
+                </article>
+
+                <!-- Proizvod 12 -->
+                <article class="proizvod-kartica" data-name="Nike Fleece Sivi Gornji Deo" data-category="gornji" data-price="3790">
+                    <div class="slika-proizvoda"><img src="../img/techfleecesivijkomplet.jpg" alt="Nike Fleece sivi gornji deo"></div>
+                    <div class="proizvod-info"><span class="proizvod-kategorija">GORNJI DEO</span><h3>Nike Fleece Sivi Gornji Deo</h3><div class="cena-red"><strong>3.790 RSD</strong><span class="stara-cena">6.290 RSD</span></div><a class="proizvod-dugme" href="./proizvod.html?id=fleece-sivi-gornji">Pogledaj detalje <span>→</span></a></div>
+                </article>
+
+                <!-- Proizvod 13 -->
+                <article class="proizvod-kartica" data-name="Nike Fleece Sivi Donji Deo" data-category="donji" data-price="3490">
+                    <div class="slika-proizvoda"><img src="../img/techfleecesivijkomplet.jpg" alt="Nike Fleece sivi donji deo"></div>
+                    <div class="proizvod-info"><span class="proizvod-kategorija">DONJI DEO</span><h3>Nike Fleece Sivi Donji Deo</h3><div class="cena-red"><strong>3.490 RSD</strong><span class="stara-cena">5.990 RSD</span></div><a class="proizvod-dugme" href="./proizvod.html?id=fleece-sivi-donji">Pogledaj detalje <span>→</span></a></div>
+                </article>
+            </div>
+
+            
+            <p class="nema-rezultata" id="nema-rezultata" hidden>Nema proizvoda koji odgovaraju pretrazi.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h3>Kontakt</h3>
+               <p>Telefon: <a href="tel:+381648797408" style="color: #ccc; text-decoration: none;">064 879 7408</a> </p>
+                
+                <p>Email: <a href="mailto:kontakt@prestigewear.rs" target="_blank" style="color: #ccc; text-decoration: none;">kontakt@prestigewear.rs</a></p>
+            </div>
+            <div id="korisnilinkovi">
+                <h3>Korisni linkovi</h3>
+                <ul>
+                    <li><a href="./kakonaruciti.html">Kako naručiti</a></li>
+                    <li><a href="./katalog.html">Katalog</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                    <li><a href="./onama.html">O nama</a></li>
+                    <li><a href="./politikaprivatnosti.html">Politika privatnosti</a></li>
+                    <li><a href="./uslovikoriscenja.html">Uslovi korišćenja</a></li>
+                    <li><a href="./zamenareklamacija.html">Zamena i reklamacija</a></li>
+                </ul>
+            </div>
+
+            <div id="socijalnemreze">
+                <h3>Pratite nas</h3>
+                <div class="mreze-kontejner">
+                    </a>
+                    <a class="krug-mrezaig" href="https://www.instagram.com/prestigewear.rss/" target="_blank" >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Prestige Wear. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/katalog.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+:root {
+    --gold-main: #c9933b;        /* Zlatna boja sa slike */
+    --gold-light: #e6b86a;       /* Svetliji sjaj za hover */
+    --dark-bg: #09090b;          /* Pozadina */
+    --card-bg: #121215;          /* Tamna podloga za kontejner */
+    --border-gold: rgba(201, 147, 59, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+/* --- NAVIGACIJA (Ujednačena sa index.html) --- */
+header {
+    background-color: #050505;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+header.skrolovan {
+    background-color: rgba(13, 13, 13, 0.95);
+    border-bottom: 2px solid var(--gold-main);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 5%;
+    box-sizing: border-box;
+}
+
+.navigacija img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.navigacija ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.navigacija ul li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navigacija ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold-main);
+    transition: width 0.3s ease;
+}
+
+.navigacija ul li a:hover::after {
+    width: 100%;
+}
+
+.navigacija ul li a:hover {
+    color: var(--gold-main);
+}
+
+.cart-icon-btn {
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.cart-icon-btn:hover {
+    color: var(--gold-main) !important;
+    transform: scale(1.1);
+}
+
+/* --- HAMBURGER DUGME U HEADERU --- */
+.hamburger-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* DODAJ OVO! Skriva hamburger meni na kompjuteru */
+    align-items: center;
+    padding: 5px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hamburger-btn:hover {
+    color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* --- OVERLAY MENI PREKO CELOG EKRANA --- */
+.overlay-meni {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.98);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+}
+
+.overlay-meni.otvoren {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.overlay-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.overlay-top img {
+    height: 50px;
+}
+
+.zatvori-meni {
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.zatvori-meni:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.overlay-nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.overlay-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay-nav ul li {
+    margin: 15px 0;
+}
+
+.overlay-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.overlay-nav ul li a:hover,
+.overlay-nav ul li a.aktivno-overlay {
+    color: #ffc107;
+}
+
+
+
+
+.razlog-card {
+    display: block; /* FIX #1 - da w-100 radi kako treba */
+    cursor: pointer;
+    background-color: #0d0d0d;
+    color: #a1a1aa;
+    transition: all 0.25s ease;
+}
+
+.razlog-card:hover {
+    border-color: #ffffff !important;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.razlog-card i {
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Kad je radio izabran - oboji karticu, tekst I ikonicu u zlatno */
+input[type="radio"]:checked + label.razlog-card {
+    border-color: var(--gold-main) !important;
+    background-color: rgba(201, 147, 59, 0.1);
+    color: var(--gold-main);
+    box-shadow: 0 0 15px rgba(201, 147, 59, 0.25);
+    transform: translateY(-2px);
+}
+
+/* FIX #2 - jača specifičnost + !important pobeđuje Bootstrap text-* klase */
+input[type="radio"]:checked + label.razlog-card i {
+    color: var(--gold-main) !important;
+    transform: scale(1.1);
+}
+
+/* Pristupačnost - fokus prilikom navigacije tastaturom */
+input[type="radio"]:focus-visible + label.razlog-card {
+    outline: 2px solid var(--gold-main);
+    outline-offset: 2px;
+}
+
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 60px 10% 20px 10%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer div {
+    flex: 1;
+}
+
+.footer h3 {
+    color: var(--gold-main);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-main);
+    display: inline-block;
+}
+
+.footer p, .footer ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+
+
+.footer ul li a:hover {
+    color: var(--gold-main);
+}
+
+/* --- IKONE SOCIJALNIH MREŽA --- */
+
+.mreze-kontejner {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 45px;            
+    height: 45px;           
+    background-color: #ffffff;
+    border-radius: 50%;     
+    text-decoration: none; 
+    
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
+    font-size: 20px;         
+    color: #061c30;          
+    transition: color 0.3s ease;
+    margin-right: auto;
+    margin-left: 10%;
+}
+
+
+.krug-mrezaig:hover {
+    background-color: #E1306C; 
+    transform: translateY(-3px);
+}
+
+.krug-mreza:hover i {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- KRAJ FOOTER --- */
+
+
+
+/* --- RESPONSIVE OPTIMIZACIJA (MOBILNI - DO 768px) --- */
+@media (max-width: 768px) {
+    .overlay-nav ul li a {
+        font-size: 2.2rem;
+    }
+
+    .hero-main-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-card-container {
+        padding: 20px 12px !important;
+    }
+
+    .btn-pogledaj-sve {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* POPRAVAK NAVIGACIJE NA MOBILNOM */
+    .navigacija {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .navigacija img {
+        height: 60px !important;
+        width: auto;
+    }
+
+    .navigacija .gap-3 {
+        gap: 12px !important;
+        align-items: center !important;
+        display: flex !important;
+    }
+
+    .hamburger-btn, .cart-icon-btn {
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+
+    .hamburger-btn i {
+        font-size: 25px !important;
+    }
+
+    /* Dodaj ovo unutar @media (max-width: 768px) bloka */
+.navigacija ul {
+    display: none !important; /* Skriva desktop linkove na mobitelu */
+}
+
+.hamburger-btn {
+    display: flex !important; /* Pokazuje hamburger meni na mobitelu */
+}
+
+    body {
+        padding-top: 40px !important; /* Smanjeno sa 90px na 65px za mobilni */
+    }
+
+    .steps-wrapper, .hero-card-container {
+        margin-top: 10px !important; /* Smanjuje dodatnu gornju marginu kontejnera */
+    }
+
+    /* POPRAVAK FOOTERA NA MOBILNOM */
+    footer, .footer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 15px !important;
+        gap: 35px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    footer div, .footer div {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    footer ul, .footer ul {
+        padding: 0 !important;
+        align-items: center !important;
+    }
+
+    /* U tvom fajlu na dnu pise margin-left: 67% !important; - To MORAS obrisati/promijeniti u ovo: */
+.mreze-kontejner {
+    justify-content: center !important;
+    display: flex !important;
+    margin: 15px 0 0 0 !important; /* Popravljeno! */
+    gap: 15px !important;
+}
+
+    /* --- POPRAVAK ZA CENTRIRANJE MREZA --- */
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
+    margin: 0 !important;
+}
+
+.krug-mreza i, .krug-mrezaig i, .krug-mrezayt i {
+    margin: 0 !important;
+}
+
+}
