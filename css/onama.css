@@ -16,7 +16,8 @@ body {
     background-color: #0d0d0d;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden; /* Srečava bilo kakav neželjeni horizontalni skrol */
+    overflow-x: hidden; 
+    padding-top: 90px;
 }
 
 html, body {
@@ -26,75 +27,84 @@ html, body {
 
 /* --- NAVIGACIJA --- */
 header {
-    background-color: #050505;
+    background-color: transparent; 
+    padding: 30px; 
+
+    /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1050;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
 }
 
 header.skrolovan {
-    background-color: rgba(13, 13, 13, 0.95);
-    border-bottom: 2px solid var(--gold-main);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background-color: rgba(13, 13, 13, 0.95); /* Bogata tamna pozadina (nije providna) */
+    border-bottom: 2px solid var(--gold-main); /* Zlatni rub na dnu za luksuzan kontrast */
+    padding: 15px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Dublja senka da odvoji meni od sajta */
 }
 
 .navigacija {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
-    padding: 20px 5%; /* Popravljeno: povećan padding da logo ne udara u vrh */
-    box-sizing: border-box;
+    padding: 0 10%;
 }
 
 .navigacija img {
-    height: 50px;
+    height: 60px; 
     object-fit: contain;
 }
 
 .navigacija ul {
     display: flex;
-    gap: 40px;
+    gap: 40px; 
     list-style: none;
-    margin-bottom: 0;
-    padding: 0;
+    justify-content: center; 
+    width: 100%;
 }
 
 .navigacija ul li a {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     color: #FFFFFF;
     transition: color 0.3s ease;
     position: relative;
 }
 
+/* Skrivena linija ispod linka u početku */
 .navigacija ul li a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -5px; /* Koliko je linija udaljena ispod teksta */
     left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--gold-main);
-    transition: width 0.3s ease;
+    width: 0;     /* Početna širina je 0 (ne vidi se) */
+    height: 2px;  /* Debljina zlatne linije */
+    background-color: var(--gold-main); /* Vuče tvoju zlatnu boju */
+    transition: width 0.3s ease; /* Glatki efekat širenja */
 }
 
-
+/* Kada pređeš mišem, linija se širi na 100% širine teksta */
 .navigacija ul li a:hover::after {
     width: 100%;
 }
 
 .navigacija ul li a:hover {
-    color: var(--gold-main);
+    color: var(--gold-main); 
 }
 
+ /* Ispravka širine liste da bi korpa stala desno */
+.navigacija ul {
+    width: auto !important; /* Umesto 100% da ne gura elemente */
+    margin-bottom: 0;
+}
+
+/* Stil za ikonicu korpe u navigaciji */
 .cart-icon-btn {
     transition: color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -105,21 +115,47 @@ header.skrolovan {
     transform: scale(1.1);
 }
 
+/* 1. Početno stanje navigacije - crna pozadina i prostor */
+header {
+    background-color: #050505; /* Elegantna tamna/crna pozadina */
+    position: fixed; /* Zadržava navigaciju na vrhu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050; /* Osigurava da uvijek bude iznad ostalog sadržaja */
+    transition: all 0.3s ease; /* Za gladak prijelaz kad skrolanje preuzme */
+}
+
+/* 2. Malo prostora unutar same navigacije da elementi "dišu" */
+.navigacija {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+/* 3. Guranje ostatka stranice prema dolje */
+/* Ovo sprječava da se hero sekcija (zlatni okvir) zavuče ispod navigacije */
+body {
+    padding-top: 100px; /* Povećaj ili smanji ovaj broj ovisno o točnoj visini tvog logotipa/headera */
+}
+
+
+/*kraj navigacije*/
+
 /* --- HAMBURGER DUGME U HEADERU --- */
 .hamburger-btn {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 24px; 
     cursor: pointer;
-    display: none;
+    display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .hamburger-btn:hover {
-    color: #ffc107;
+    color: #ffc107; /* Zlatna/Žuta boja */
     transform: scale(1.05);
 }
 
@@ -128,24 +164,28 @@ header.skrolovan {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Popravljeno: zamijenjeno 100vw sa 100% da ne pravi marginu udesno */
+    width: 100vw;
     height: 100vh;
-    background-color: rgba(10, 10, 10, 0.98);
-    z-index: 9999;
+    background-color: rgba(10, 10, 10, 0.98); /* Tamna pozadina umesto plave */
+    z-index: 9999; 
     display: flex;
     flex-direction: column;
+    
+    /* Animacija sakrivanja */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px);
+    transform: translateY(-20px); 
     transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
 }
 
+/* Klasa koja se dodaje preko JS-a kada se klikne */
 .overlay-meni.otvoren {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
+/* Vrh overlay menija (Logo i dugme zatvori) */
 .overlay-top {
     display: flex;
     justify-content: space-between;
@@ -157,6 +197,7 @@ header.skrolovan {
     height: 50px;
 }
 
+/* Dugme ZATVORI */
 .zatvori-meni {
     background: transparent;
     color: #fff;
@@ -178,12 +219,13 @@ header.skrolovan {
     color: #ffc107;
 }
 
+/* Linkovi unutar menija */
 .overlay-nav {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 10%;
+    justify-content: center; 
+    padding-left: 10%; 
 }
 
 .overlay-nav ul {
@@ -199,7 +241,7 @@ header.skrolovan {
 .overlay-nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 3rem; 
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -207,7 +249,7 @@ header.skrolovan {
 
 .overlay-nav ul li a:hover,
 .overlay-nav ul li a.aktivno-overlay {
-    color: #ffc107;
+    color: #ffc107; /* Zlatna/žuta umesto plave */
 }
 
 /* --- FOOTER --- */
@@ -281,7 +323,7 @@ footer {
     font-size: 20px;         
     color: #061c30;          
     transition: color 0.3s ease;
-    margin: 0; /* Popravljeno: uklonjene nepravilne margine */
+    margin: 0; 
 }
 
 .krug-mrezaig:hover {
@@ -301,47 +343,89 @@ footer {
     color: #888;
 }
 
-/* --- RESPONSIVE OPTIMIZACIJA (MOBILNI - DO 768px) --- */
+/* Za manje telefone */
+@media (max-width: 768px) {
+    .overlay-nav ul li a {
+        font-size: 2.2rem; 
+    }
+}
+
+
+/* --- OPTIMIZACIJA ZA MOBILNE UREĐAJE (do 768px) --- */
 @media (max-width: 768px) {
 
-    body {
-        /* Povećano sa 40px na 95px kako zaglavlje ne bi prekrivalo tekst */
-        padding-top: 95px !important; 
-    }
-
-    .overlay-nav ul li a {
-        font-size: 2.2rem;
-    }
 
     .hero-main-title {
         font-size: 1.8rem;
     }
-
+    
     .hero-card-container {
         padding: 20px 12px !important;
     }
 
-    .btn-pogledaj-sve {
+    .btn-pogledaj-sve, .btn-promeni-modele {
         width: 100%;
+        justify-content: center;
         text-align: center;
     }
 
-    /* POPRAVAK NAVIGACIJE NA MOBILNOM */
+    .product-img-wrap {
+        height: 140px;
+    }
+
+    .product-img-wrap img {
+        max-height: 120px;
+    }
+
+    .product-title {
+        font-size: 0.78rem;
+        min-height: 32px;
+    }
+
+    .catalog-img-wrap img {
+        max-height: 100px;
+    }
+
+    .catalog-title {
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+
+    .btn-odaberi {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+
+    .feature-card {
+        padding: 25px 18px;
+    }
+    
+    .feature-title {
+        font-size: 1rem;
+    }
+
+    .feature-text {
+        font-size: 0.82rem;
+    }
+    
+    /* 1. POPRAVAK NAVIGACIJE */
     .navigacija {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 12px 15px !important; /* Smanjen unutrašnji padding navigacije za mobilne */
-        width: 100% !important;
-        box-sizing: border-box !important;
+        padding: 10px 15px !important;
+        width: 100%;
+        box-sizing: border-box;
     }
 
+    /* Smanjivanje logotipa da ne probija zlatni okvir */
     .navigacija img {
-        height: 42px !important; /* Blago smanjena visina logotipa na mobilnom */
+        height: 40px !important; /* Podešeno za mobilni */
         width: auto;
     }
 
+    /* Poravnavanje hamburgera i korpe u savršenu liniju */
     .navigacija .gap-3 {
         gap: 12px !important;
         align-items: center !important;
@@ -354,26 +438,10 @@ footer {
     }
 
     .hamburger-btn i {
-        font-size: 25px !important;
+        font-size: 22px !important;
     }
 
-    .navigacija ul {
-        display: none !important;
-    }
-
-    .hamburger-btn {
-        display: flex !important;
-    }
-
-    body {
-        padding-top: 40px !important;
-    }
-
-    .steps-wrapper, .hero-card-container {
-        margin-top: 10px !important;
-    }
-
-    /* POPRAVAK FOOTERA NA MOBILNOM */
+    /* POPRAVAK FOOTERA NA MOBILNOM - Sada je pravilno unutar @media zagrade */
     footer, .footer {
         display: flex !important;
         flex-direction: column !important;

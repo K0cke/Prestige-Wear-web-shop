@@ -1,6 +1,8 @@
 Dodati neke bolje i lepse slike kao i prave proizvode i njihove cene
 Povezati pocetne proizvode sa proizvodima iz kataloga (da kad se klikne na poruci da se dodaju u korpu a da izadje kao potvrda da je dodata u korpu)
-Namestiti lepo da velicina logo-a, hamburger menija i korpe bude jednaka na svim stranicama na mobilnom prikazu i u desktop prikazu
-Napraviti i Recenzije i preporuke stranicu
+Napraviti i Recenzije i preporuke stranicu (stefan do zavrsava)
 (OPCIONALNO) Napraviti vodic za velicine stranicu (kad se ode na proizvod ima desno) - ako se odlucimo da necemo da pravimo to samo cemo da obrisemo to skroz
+Staviti kao strelicu za nazad u korpi i proizvodu da moze korisnik da se vrati korak u nazad
+U proizvod.html dodati ispod da budu kao preporuceni drugi proizvodi jos
+Kad smo u korpi da moze da se klikne na proizvode koje smo dodali i da to vodi bas na taj proizvod u katalogu
 Probati naci neke greske i njih ispraviti
