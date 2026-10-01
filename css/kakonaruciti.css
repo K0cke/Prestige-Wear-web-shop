@@ -378,7 +378,7 @@ body {
 
 /* --- FOOTER --- */
 footer {
-    background-color: #080808;
+    background-color: var(--dark-bg);
     color: #ffffff;
     padding: 60px 10% 20px 10%;
 }
@@ -411,7 +411,6 @@ footer {
 
 .footer ul {
     list-style: none;
-    padding: 0;
 }
 
 .footer ul li a {
@@ -420,9 +419,13 @@ footer {
     transition: color 0.3s;
 }
 
+
+
 .footer ul li a:hover {
     color: var(--gold-main);
 }
+
+/* --- IKONE SOCIJALNIH MREŽA --- */
 
 .mreze-kontejner {
     display: flex;
@@ -430,27 +433,38 @@ footer {
     margin-top: 15px;
 }
 
+
 .krug-mreza, .krug-mrezaig, .krug-mrezayt {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    
+    width: 45px;            
+    height: 45px;           
     background-color: #ffffff;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 50%;     
+    text-decoration: none; 
+    
+    transition: transform 0.3s ease, background-color 0.3s ease; 
 }
 
-.krug-mreza i, .krug-mrezaig i, .krug-mrezayt i {
-    font-size: 20px;
-    color: #061c30;
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
+    font-size: 20px;         
+    color: #061c30;          
     transition: color 0.3s ease;
+    margin-right: auto;
+    margin-left: 10%;
 }
+
 
 .krug-mrezaig:hover {
-    background-color: #E1306C;
+    background-color: #E1306C; 
     transform: translateY(-3px);
+}
+
+.krug-mreza:hover i {
+    color: #ffffff;
 }
 
 .copyright {
@@ -460,6 +474,8 @@ footer {
     font-size: 0.85rem;
     color: #888;
 }
+
+/* --- KRAJ FOOTER --- */
 
 /* --- RESPONSIVE OPTIMIZACIJA (MOBILNI - DO 768px) --- */
 @media (max-width: 768px) {

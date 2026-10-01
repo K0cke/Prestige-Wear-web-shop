@@ -541,7 +541,7 @@ footer {
 }
 
 
-.krug-mreza, .krug-mrezaig {
+.krug-mreza, .krug-mrezaig, .krug-mrezayt {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,11 +556,12 @@ footer {
 }
 
 
-.krug-mreza i, .krug-mrezaig i {
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
     font-size: 20px;         
     color: #061c30;          
     transition: color 0.3s ease;
-    margin: 0; /* Fiksirano: uklonjene margine koje su gurale ikonicu u stranu */
+    margin-right: auto;
+    margin-left: 10%;
 }
 
 

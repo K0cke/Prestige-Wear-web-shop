@@ -35,9 +35,9 @@ body {
 
 /* --- NAVIGACIJA --- */
 header {
-    background-color: rgba(13, 13, 13, 0.95);
     background-color: transparent; 
     padding: 30px; 
+
     /* --- Da bude fiksirana navigacija i da bude vidljiva preko slike --- */
     position: fixed;
     top: 0;
@@ -45,7 +45,6 @@ header {
     width: 100%;
     z-index: 1000;
     transition: all 0.3s ease; /* Glatki prelaz pri skrolovanju */
-    
 }
 
 header.skrolovan {
@@ -443,36 +442,44 @@ footer {
     transition: color 0.3s;
 }
 
+
+
 .footer ul li a:hover {
     color: var(--gold-main);
 }
 
 /* --- IKONE SOCIJALNIH MREŽA --- */
+
 .mreze-kontejner {
     display: flex;
     gap: 15px;
     margin-top: 15px;
 }
 
+
 .krug-mreza, .krug-mrezaig, .krug-mrezayt {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     width: 45px;            
     height: 45px;           
     background-color: #ffffff;
     border-radius: 50%;     
     text-decoration: none; 
+    
     transition: transform 0.3s ease, background-color 0.3s ease; 
-    margin: 0;
 }
 
-.krug-mreza i, .krug-mrezaig i, .krug-mrezayt i {
+
+.krug-mreza i, .krug-mrezaig, .krug-mrezayt {
     font-size: 20px;         
     color: #061c30;          
     transition: color 0.3s ease;
-    margin: 0;
+    margin-right: auto;
+    margin-left: 10%;
 }
+
 
 .krug-mrezaig:hover {
     background-color: #E1306C; 
@@ -490,6 +497,8 @@ footer {
     font-size: 0.85rem;
     color: #888;
 }
+
+/* --- KRAJ FOOTER --- */
 
 /* --- RESPONSIVE OPTIMIZACIJA (MOBILNI - DO 768px) --- */
 @media (max-width: 768px) {

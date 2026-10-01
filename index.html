@@ -452,52 +452,88 @@
     </section>
 
     <!-- RECENZIJE I PREPORUKE SEKCIJA START -->
-<section id="recenzije" class="py-5 border-top border-bottom border-secondary border-opacity-25">
-    <div class="container p-4 p-md-5">
-        
-        <!-- Tvoj naslovni deo -->
-        <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
-            <div>
-                <span class="sub-title text-secondary fw-bold" style="letter-spacing: 2px;">• ŠTA KAŽU NAŠI KUPCI</span>
-                <h2 class="hero-main-title text-white mt-2" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 3rem;">
-                    RECENZIJE I PREPORUKE
-                </h2>
-            </div>
-            <!-- Dugme iz mog primera prebačeno pored naslova (kao na tvojoj slici) -->
-            <a href="#" class="btn btn-info text-white rounded-pill px-4 py-2 fw-bold" style="background-color: #2db4d8; border: none;">
-                Vidi sve &rarr;
-            </a>
+<section id="recenzije" class="reviews-section">
+    <div class="container reviews-container">
+        <div class="reviews-heading">
+            <span class="reviews-eyebrow">UTISCI KUPACA</span>
+            <h2>Šta kažu naši kupci</h2>
         </div>
 
-        <!-- Mreža sa skrinšotovima kupaca -->
-        <div class="row g-4 justify-content-center" id="reviews-grid">
-            
-            <!-- Prva slika recenzije (Spuštena dole pomoću mt-md-5) -->
-            <div class="col-6 col-md-4 mt-md-5">
-                <div class="review-card rounded-4">
-                    <img src="./img//Preporuke/preporuka1.png" alt="Utisak kupca 1" class="img-fluid  w-100 rounded-4">
-                </div>
-            </div>
-            
-            <!-- Druga slika recenzije (Stoji visoko) -->
-            <div class="col-6 col-md-4">
-                <div class="review-card rounded-4">
-                    <img src="./img/Preporuke/preporuka2.png" alt="Utisak kupca 2" class="img-fluid object-fit-cover w-100 rounded-4">
-                </div>
-            </div>
-            
-            <!-- Treća slika recenzije (Sakrivena na malim telefonima da ne guši, vidi se na PC-u) -->
-            <div class="col-6 col-md-4 mt-md-5 d-none d-md-block">
-                <div class="review-card rounded-4 mt-md-4">
-                    <img src="./img/Preporuke/preporuka3.png" alt="Utisak kupca 3" class="img-fluid  w-100 rounded-4">
-                </div>
-            </div>
-
+        <div class="reviews-grid" id="reviews-grid" aria-live="polite">
+          <div class="reviews-track" id="reviews-track">
+            <article class="review-card is-featured">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Brate, stigao je šorc, sve preporuke. Hvala puno na brzoj isporuci i odličnoj usluzi!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Da, brate, top je!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Odlično!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Sve ful, imaš moje preporuke!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Svaka pohvala za saradnju!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Brza isporuka, hvala puno!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Šorc je stigao, sve preporuke!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Top je, hvala!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="Pozitivan utisak">★★★★★</div>
+                <p class="review-quote">„Odlična usluga, sve pohvale!“</p>
+                <div class="review-source"><span class="review-avatar">K</span><span><strong>Kupac</strong><small>Utisak nakon kupovine</small></span></div>
+            </article>
+          </div>
+        </div>
+        <div class="reviews-controls" aria-label="Navigacija kroz recenzije">
+            <button class="reviews-arrow" type="button" id="reviews-prev" aria-label="Prethodne tri recenzije">&#8249;</button>
+            <span class="reviews-page" id="reviews-page" aria-live="polite">1 / 1</span>
+            <button class="reviews-arrow" type="button" id="reviews-next" aria-label="Sledeće tri recenzije">&#8250;</button>
         </div>
 
+        <div class="review-form-wrap">
+            <button class="review-open-button" type="button" id="review-open">Ocenite nas</button>
+            <form class="review-form" id="review-form" hidden>
+                <label for="review-name">Ime kupca</label>
+                <input id="review-name" name="name" type="text" maxlength="60" placeholder="Unesite svoje ime" required>
+                <label>Vaša ocena</label>
+                <div class="review-rating" role="radiogroup" aria-label="Izaberite ocenu">
+                    <button type="button" role="radio" aria-checked="false" aria-label="1 zvezdica" data-rating="1">★</button>
+                    <button type="button" role="radio" aria-checked="false" aria-label="2 zvezdice" data-rating="2">★</button>
+                    <button type="button" role="radio" aria-checked="false" aria-label="3 zvezdice" data-rating="3">★</button>
+                    <button type="button" role="radio" aria-checked="false" aria-label="4 zvezdice" data-rating="4">★</button>
+                    <button type="button" role="radio" aria-checked="false" aria-label="5 zvezdica" data-rating="5">★</button>
+                </div>
+                <label for="review-text">Vaš utisak</label>
+                <textarea id="review-text" name="text" rows="4" maxlength="500" placeholder="Napišite svoje iskustvo..." required></textarea>
+                <button class="review-submit" type="submit">Objavi recenziju</button>
+            </form>
+        </div>
     </div>
 </section>
-<!-- RECENZIJE I PREPORUKE SEKCIJA END -->
 
 
 <footer>

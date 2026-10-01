@@ -247,23 +247,6 @@ body {
 
 
 
-.razlog-card {
-    display: block; /* FIX #1 - da w-100 radi kako treba */
-    cursor: pointer;
-    background-color: #0d0d0d;
-    color: #a1a1aa;
-    transition: all 0.25s ease;
-}
-
-.razlog-card:hover {
-    border-color: #ffffff !important;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.razlog-card i {
-    transition: color 0.25s ease, transform 0.25s ease;
-}
 
 /* Kad je radio izabran - oboji karticu, tekst I ikonicu u zlatno */
 input[type="radio"]:checked + label.razlog-card {
@@ -285,6 +268,48 @@ input[type="radio"]:focus-visible + label.razlog-card {
     outline: 2px solid var(--gold-main);
     outline-offset: 2px;
 }
+
+/* --- KONTAKT STRANICA: Prestige Wear crno-zlatna paleta --- */
+body {
+    background: #0d0d0d;
+}
+.contact-section { min-height: calc(100vh - 100px); padding: 150px 0 90px; }
+.contact-section > .container { max-width: 1120px; }
+.contact-heading { margin: 0 auto 42px; max-width: 760px; text-align: center; }
+.contact-eyebrow { color: var(--gold-light); font-size: .76rem; font-weight: 700; letter-spacing: 2.4px; }
+.contact-heading h1 { margin: 10px 0 8px; color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.6rem, 5vw, 3.8rem); letter-spacing: 1.5px; }
+.contact-heading p { margin: 0 auto 20px; color: #b8b5b0; font-size: 1rem; line-height: 1.7; }
+.contact-instagram { display: inline-flex; align-items: center; border: 1px solid var(--gold-main); border-radius: 999px; padding: 10px 21px; color: var(--gold-light); font-size: .84rem; font-weight: 700; letter-spacing: .7px; text-decoration: none; transition: background .2s ease, color .2s ease; }
+.contact-instagram:hover { background: var(--gold-main); color: #111; }
+.contact-form { border: 1px solid rgba(201,147,59,.42) !important; border-radius: 18px !important; background: rgba(13,13,15,.9) !important; box-shadow: 0 22px 60px rgba(0,0,0,.38) !important; backdrop-filter: blur(6px); }
+.contact-form .row { --bs-gutter-x: 2.5rem; }
+.contact-form .col-lg-5 { padding-right: 30px; border-right: 1px solid rgba(201,147,59,.2); }
+.contact-form p.text-secondary { color: var(--gold-light) !important; font-size: .78rem; letter-spacing: 1px; }
+.contact-form .razlog-card { min-height: 118px; border: 1px solid rgba(255,255,255,.12) !important; border-radius: 12px !important; background: rgba(255,255,255,.025); color: #d4d1cc; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.contact-form .razlog-card:hover { border-color: rgba(201,147,59,.65) !important; background: rgba(201,147,59,.08); color: #fff; }
+.contact-form .razlog-card i, .contact-form .razlog-card .text-info, .contact-form .razlog-card .text-warning, .contact-form .razlog-card .text-success, .contact-form .razlog-card .text-danger { color: var(--gold-main) !important; }
+.contact-form input[type="radio"]:checked + .razlog-card { border-color: var(--gold-main) !important; background: rgba(201,147,59,.14); color: #fff; box-shadow: 0 0 20px rgba(201,147,59,.12); }
+.contact-form .form-label { color: #d0ccc5 !important; font-size: .88rem; }
+.contact-form .form-control { min-height: 48px; border: 1px solid rgba(255,255,255,.14) !important; border-radius: 9px; background: rgba(255,255,255,.045) !important; color: #fff !important; }
+.contact-form textarea.form-control { min-height: 130px; resize: vertical; }
+.contact-form .form-control::placeholder { color: #77736d; }
+.contact-form .form-control:focus { border-color: var(--gold-main) !important; box-shadow: 0 0 0 3px rgba(201,147,59,.12) !important; }
+.contact-form #submit-btn { border: 0; border-radius: 999px; background: var(--gold-main); color: #111; transition: background .2s ease, transform .2s ease; }
+.contact-form #submit-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+@media (max-width: 991.98px) {
+    .contact-section { padding: 120px 0 65px; }
+    .contact-form .col-lg-5 { padding-right: 12px; border-right: 0; }
+}
+@media (max-width: 575.98px) {
+    .contact-section { padding: 110px 0 50px; }
+    .contact-heading { margin-bottom: 28px; }
+    .contact-heading p { font-size: .92rem; }
+    .contact-form { padding: 22px 17px !important; }
+    .contact-form .razlog-card { min-height: 108px; padding: 13px 9px !important; }
+    .contact-form .col-lg-5 { margin-bottom: 18px; }
+}
+/* --- KRAJ KONTAKT STRANICE --- */
+
 
 
 

@@ -79,6 +79,17 @@ const proizvodi = {
         boje: [{ ime: "Crno-Siva", hex: "#4b5563" }],
         velicine: ["S", "M", "L", "XL"],
         opis: "Donji deo trenerke sa suženim nogavicama."
+    },
+
+    "tech-fleece-crno-syna": {
+        naziv: "Nike Tech Fleece Crno Syna",
+        kategorija: "KOMPLET",
+        cena: "6.990 RSD",
+        staraCena: "11.990 RSD",
+        slika: "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg",
+        boje: [{ ime: "Crno-Syna", hex: "#4b5563" }],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
     }
 };
 
