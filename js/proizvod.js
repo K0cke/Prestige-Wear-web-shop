@@ -2,19 +2,19 @@
 const proizvodi = {
 
     "nike-tech-fleece-joggers--donji-deo": {
-    naziv: "Nike Tech Fleece Joggers - Donji deo",
-    kategorija: "DONJI DEO",
-    cena: "6.990 RSD",
-    staraCena: "11.990 RSD",
-    boje: [
-        { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_7.webp", "../img/proizvodi slike/techlfleeceeteget2025_8.jpg", "../img/proizvodi slike/techlfleeceeteget2025_9.webp", "../img/proizvodi slike/techlfleeceeteget2025_10.webp"] },
-        { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleececrnosivi2025_8.webp", "../img/proizvodi slike/techlfleececrnosivi2025_9.webp", "../img/proizvodi slike/techlfleececrnosivi2025_10.webp"] },
-        { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_4.webp", "../img/proizvodi slike/techlfleecesivi2025_5.webp"] },
-        { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }
-    ],
-    velicine: ["S", "M", "L", "XL"],
-    opis: "Muški donji deo trenerke Nike Tech Fleece Joggers sa prepoznatljivim krojem i džepom sa rajfešlusom."
-},
+        naziv: "Nike Tech Fleece Joggers - Donji deo",
+        kategorija: "DONJI DEO",
+        cena: "6.990 RSD",
+        staraCena: "11.990 RSD",
+        boje: [
+            { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_7.webp", "../img/proizvodi slike/techlfleeceeteget2025_8.jpg", "../img/proizvodi slike/techlfleeceeteget2025_9.webp", "../img/proizvodi slike/techlfleeceeteget2025_10.webp"] },
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleececrnosivi2025_8.webp", "../img/proizvodi slike/techlfleececrnosivi2025_9.webp", "../img/proizvodi slike/techlfleececrnosivi2025_10.webp"] },
+            { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_4.webp", "../img/proizvodi slike/techlfleecesivi2025_5.webp"] },
+            { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Muški donji deo trenerke Nike Tech Fleece Joggers sa prepoznatljivim krojem i džepom sa rajfešlusom."
+    },
 
     "nike-tech-fleece-joggers--gornji-deo": {
         naziv: "Nike Tech Fleece Joggers - Gornji deo",
@@ -22,11 +22,11 @@ const proizvodi = {
         cena: "7.490 RSD",
         staraCena: "12.990 RSD",
         boje: [
-        { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_1.webp", "../img/proizvodi slike/techlfleeceeteget2025_2.webp", "../img/proizvodi slike/techlfleeceeteget2025_3.webp", "../img/proizvodi slike/techlfleeceeteget2025_4.webp", "../img/proizvodi slike/techlfleeceeteget2025_5.webp", "../img/proizvodi slike/techlfleeceeteget2025_6.webp"] },
-        { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleececrnosivi2025_7.webp", "../img/proizvodi slike/techlfleececrnosivi2025_6.webp", "../img/proizvodi slike/techlfleececrnosivi2025_4.webp", "../img/proizvodi slike/techlfleececrnosivi2025_3.webp"] },
-        { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_1.webp", "../img/proizvodi slike/techlfleecesivi2025_3.webp", "../img/proizvodi slike/techlfleecesivi2025_6.webp", "../img/proizvodi slike/techlfleecesivi2025_7.webp"] },
-        { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp"] }
-    ],
+            { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_1.webp", "../img/proizvodi slike/techlfleeceeteget2025_2.webp", "../img/proizvodi slike/techlfleeceeteget2025_3.webp", "../img/proizvodi slike/techlfleeceeteget2025_4.webp", "../img/proizvodi slike/techlfleeceeteget2025_5.webp", "../img/proizvodi slike/techlfleeceeteget2025_6.webp"] },
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleececrnosivi2025_7.webp", "../img/proizvodi slike/techlfleececrnosivi2025_6.webp", "../img/proizvodi slike/techlfleececrnosivi2025_4.webp", "../img/proizvodi slike/techlfleececrnosivi2025_3.webp"] },
+            { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_1.webp", "../img/proizvodi slike/techlfleecesivi2025_3.webp", "../img/proizvodi slike/techlfleecesivi2025_6.webp", "../img/proizvodi slike/techlfleecesivi2025_7.webp"] },
+            { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp"] }
+        ],
         velicine: ["S", "M", "L", "XL"],
         opis: "Ekskluzivni Nike Tech Fleece Joggers gornji deo u vise razlicitih boja."
     },
@@ -37,22 +37,23 @@ const proizvodi = {
         cena: "13.490 RSD",
         staraCena: "22.990 RSD",
         boje: [
-        { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_3.webp", "../img/proizvodi slike/techlfleeceeteget2025_4.webp", "../img/proizvodi slike/techlfleeceeteget2025_2.webp", "../img/proizvodi slike/techlfleeceeteget2025_5.webp", "../img/proizvodi slike/techlfleeceeteget2025_7.webp", "../img/proizvodi slike/techlfleeceeteget2025_8.jpg", "../img/proizvodi slike/techlfleeceeteget2025_9.webp", "../img/proizvodi slike/techlfleeceeteget2025_10.webp"] },
-        { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleecescrnosivi2025_4.webp", "../img/proizvodi slike/techlfleececrnosivi2025_6.webp", "../img/proizvodi slike/techlfleecescrnosivi2025_3.webp", "../img/proizvodi slike/techlfleececrnosivi2025_7.webp", "../img/proizvodi slike/techlfleececrnosivi2025_8.webp", "../img/proizvodi slike/techlfleececrnosivi2025_9.webp", "../img/proizvodi slike/techlfleececrnosivi2025_10.webp"] },
-        { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_1.webp", "../img/proizvodi slike/techlfleecesivi2025_3.webp", "../img/proizvodi slike/techlfleecesivi2025_6.webp", "../img/proizvodi slike/techlfleecesivi2025_7.webp", "../img/proizvodi slike/techlfleecesivi2025_4.webp", "../img/proizvodi slike/techlfleecesivi2025_5.webp"] },
-        { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_1.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }],
+            { ime: "Teget", hex: "#1d2536", slike: ["../img/proizvodi slike/techlfleeceeteget2025_3.webp", "../img/proizvodi slike/techlfleeceeteget2025_4.webp", "../img/proizvodi slike/techlfleeceeteget2025_2.webp", "../img/proizvodi slike/techlfleeceeteget2025_5.webp", "../img/proizvodi slike/techlfleeceeteget2025_7.webp", "../img/proizvodi slike/techlfleeceeteget2025_8.jpg", "../img/proizvodi slike/techlfleeceeteget2025_9.webp", "../img/proizvodi slike/techlfleeceeteget2025_10.webp"] },
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/proizvodi slike/techlfleecescrnosivi2025_4.webp", "../img/proizvodi slike/techlfleececrnosivi2025_6.webp", "../img/proizvodi slike/techlfleecescrnosivi2025_3.webp", "../img/proizvodi slike/techlfleececrnosivi2025_7.webp", "../img/proizvodi slike/techlfleececrnosivi2025_8.webp", "../img/proizvodi slike/techlfleececrnosivi2025_9.webp", "../img/proizvodi slike/techlfleececrnosivi2025_10.webp"] },
+            { ime: "Siva", hex: "#d1d5db", slike: ["../img/proizvodi slike/techlfleecesivi2025_1.webp", "../img/proizvodi slike/techlfleecesivi2025_3.webp", "../img/proizvodi slike/techlfleecesivi2025_6.webp", "../img/proizvodi slike/techlfleecesivi2025_7.webp", "../img/proizvodi slike/techlfleecesivi2025_4.webp", "../img/proizvodi slike/techlfleecesivi2025_5.webp"] },
+            { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_1.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }
+        ],
         velicine: ["S", "M", "L", "XL"],
         opis: "Ekskluzivni Nike Tech Fleece Joggers komplet u vise razlicitih boja."
     },
     
-
     "tech-fleece-crno-syna": {
         naziv: "Nike Tech Fleece Crno Syna",
         kategorija: "KOMPLET",
         cena: "6.990 RSD",
         staraCena: "11.990 RSD",
         boje: [
-        { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-detail-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-tracksuit-hq3748-010-_-hq3749-010-back.webp"] },],
+            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-detail-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-tracksuit-hq3748-010-_-hq3749-010-back.webp"] }
+        ],
         velicine: ["S", "M", "L", "XL"],
         opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
     }
@@ -95,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
         elSlika.src = trenutniNizSlika[trenutniIndexSlike];
         elSlika.alt = proizvod.naziv;
 
-        // Sakrij strelice ako ima samo 1 slika u odabranoj boji
         if (trenutniNizSlika.length <= 1) {
             if (btnLevo) btnLevo.style.display = 'none';
             if (btnDesno) btnDesno.style.display = 'none';
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Kreiranje kružića za boje
     if (proizvod.boje && proizvod.boje.length > 0) {
-        if (bojeKontejner) bojeKontejner.innerHTML = ''; // Očisti kontejner
+        if (bojeKontejner) bojeKontejner.innerHTML = ''; 
         
         proizvod.boje.forEach((bojaObj, index) => {
             const kruzic = document.createElement('div');
@@ -134,24 +134,21 @@ document.addEventListener("DOMContentLoaded", () => {
             kruzic.title = bojaObj.ime;
 
             kruzic.onclick = () => {
-                // Skini active klasu sa svih, dodaj na kliknuti
                 document.querySelectorAll('.boja-kruzic').forEach(k => k.classList.remove('active'));
                 kruzic.classList.add('active');
 
-                // Ažuriraj tekst boje i slike
                 if (bojaNazivEl) bojaNazivEl.innerText = bojaObj.ime;
                 izabranaBoja = bojaObj.ime;
 
                 if (bojaObj.slike && bojaObj.slike.length > 0) {
                     trenutniNizSlika = bojaObj.slike;
-                    trenutniIndexSlike = 0; // Vrati na prvu sliku nove boje
+                    trenutniIndexSlike = 0; 
                     osveziSliku();
                 }
             };
             
             bojeKontejner.appendChild(kruzic);
             
-            // Postavi inicijalno stanje za prvu boju
             if (index === 0) {
                 izabranaBoja = bojaObj.ime;
                 if (bojaNazivEl) bojaNazivEl.innerText = izabranaBoja;
@@ -185,13 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dodajUKorpu = (preusmeri = false) => {
         let korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
-        // Uzimamo prvu sliku trenutno izabranog niza
         const slikaZaKorpu = trenutniNizSlika.length > 0 ? trenutniNizSlika[0] : "";
 
         const artikal = {
             id: id,
             naziv: proizvod.naziv,
-            cena: parseInt(proizvod.cena.replace(/\D/g, '')), // Čisti "6.990 RSD" u broj 6990
+            cena: parseInt(proizvod.cena.replace(/\D/g, '')),
             slika: slikaZaKorpu,
             velicina: izabranaVelicina,
             boja: izabranaBoja
@@ -200,13 +196,11 @@ document.addEventListener("DOMContentLoaded", () => {
         korpa.push(artikal);
         localStorage.setItem('prestigeKorpa', JSON.stringify(korpa));
 
-        // --- DODATO: Automatsko osvežavanje bedža u headeru ---
         const badge = document.getElementById('broj-u-korpi');
         if (badge) {
             badge.innerText = korpa.length;
             badge.style.display = 'inline-block';
         }
-        // ------------------------------------------------------
 
         if (preusmeri) {
             window.location.href = './korpa.html';
@@ -220,9 +214,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btnDodaj) btnDodaj.onclick = (e) => { e.preventDefault(); dodajUKorpu(false); };
     if (btnPoruci) btnPoruci.onclick = (e) => { e.preventDefault(); dodajUKorpu(true); };
+
+    // --- 4. POZIV ZA NASUMICNE PREPORUČENE PROIZVODE ---
+    prikaziPreporuceneProizvode(id);
 });
 
-// Osvežavanje brojača korpe (ostaje van DOMContentLoaded bloka)
+// Osvežavanje brojača korpe
 function osveziBrojac() {
     const korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
     const badge = document.getElementById('broj-u-korpi');
@@ -243,3 +240,54 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// Funkcija za prikaz nasumičnih preporučenih proizvoda (Prilagođena objektu)
+function prikaziPreporuceneProizvode(trenutniId) {
+    const kontejner = document.getElementById('preporuceni-kontejner');
+    if (!kontejner) return;
+
+    // 1. Pretvaramo objekat "proizvodi" u niz (array) tako da zadržimo i njegov ključ kao ID
+    let sviKljucevi = Object.keys(proizvodi).filter(kljuc => kljuc !== trenutniId);
+
+    // Ako nema drugih proizvoda, sakrij sekciju
+    if (sviKljucevi.length === 0) {
+        kontejner.parentElement.parentElement.style.display = 'none';
+        return;
+    }
+
+    // 2. Nasumično promiješamo ključeve
+    sviKljucevi.sort(() => 0.5 - Math.random());
+
+    // 3. Uzimamo maksimalno 4 proizvoda (ili manje ako ih nema 4 u bazi)
+    let odabraniKljucevi = sviKljucevi.slice(0, 4);
+
+    let html = '';
+    odabraniKljucevi.forEach((kljuc, index) => {
+        let item = proizvodi[kljuc];
+        // Na mobilnom prikazujemo prva 2, a na desktopu sva 4
+        let skrivanjeZaMobilni = (index >= 2) ? 'd-none d-md-block' : '';
+        
+        // Uzimamo prvu sliku iz prve boje kao sličicu za preporuku
+        let slikaProizvoda = "";
+        if (item.boje && item.boje.length > 0 && item.boje[0].slike && item.boje[0].slike.length > 0) {
+            slikaProizvoda = item.boje[0].slike[0];
+        }
+
+        html += `
+            <div class="col-6 col-md-3 ${skrivanjeZaMobilni}">
+                <div class="card bg-dark border border-secondary border-opacity-25 h-100 rounded-4 overflow-hidden">
+                    <a href="./proizvod.html?id=${kljuc}">
+                        <img src="${slikaProizvoda}" class="card-img-top object-fit-cover" alt="${item.naziv}" style="height: 220px;">
+                    </a>
+                    <div class="card-body d-flex flex-column p-3">
+                        <h5 class="card-title text-white fs-6 fw-bold mb-1">${item.naziv}</h5>
+                        <p class="card-text fw-bold mt-auto mb-2" style="color: var(--gold-main);">${item.cena}</p>
+                        <a href="./proizvod.html?id=${kljuc}" class="btn btn-outline-warning btn-sm w-100 fw-bold">Pogledaj</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    kontejner.innerHTML = html;
+}

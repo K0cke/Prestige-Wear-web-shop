@@ -1,6 +1,2 @@
-Dodati neke bolje i lepse slike kao i prave proizvode i njihove cene
-Povezati pocetne proizvode sa proizvodima iz kataloga (da kad se klikne na poruci da se dodaju u korpu a da izadje kao potvrda da je dodata u korpu)
-Staviti kao strelicu za nazad u korpi i proizvodu da moze korisnik da se vrati korak u nazad
-U proizvod.html dodati ispod da budu kao preporuceni drugi proizvodi jos
-Kad smo u korpi da moze da se klikne na proizvode koje smo dodali i da to vodi bas na taj proizvod u katalogu
+Dodati za tech fleece synu gornji, donji deo i dodati jos modela kao sto si do sad radio
 Probati naci neke greske i njih ispraviti

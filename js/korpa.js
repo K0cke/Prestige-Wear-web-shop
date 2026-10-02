@@ -130,4 +130,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+    // Primer unutar petlje koja iscrtava proizvode u korpi (npr. korpa.js)
+let html = '';
+
+korpa.forEach((item, index) => {
+    html += `
+        <div class="col-12">
+            <div class="card bg-dark border border-secondary border-opacity-25 rounded-4 p-3 d-flex flex-row align-items-center justify-content-between">
+                
+                <!-- Celokupan levi i srednji deo je link ka stranici proizvoda -->
+                <a href="./proizvod.html?id=${item.id}" class="d-flex align-items-center text-decoration-none text-white flex-grow-1">
+                    <img src="${item.slika}" alt="${item.naziv}" class="rounded-3 object-fit-cover me-3" style="width: 70px; height: 70px;">
+                    <div>
+                        <h5 class="fs-6 fw-bold mb-1">${item.naziv}</h5>
+                        <p class="text-light opacity-75 small mb-0">Boja: ${item.boja} | Veličina: ${item.velicina}</p>
+                    </div>
+                </a>
+
+                <!-- Desni deo: Cena i dugme za brisanje (odvojeno od linka) -->
+                <div class="d-flex align-items-center gap-4 ms-3">
+                    <span class="fw-bold text-nowrap" style="color: var(--gold-main);">${item.cena.toLocaleString()} RSD</span>
+                    <button onclick="ukloniIzKorpe(${index})" class="btn btn-outline-danger btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    `;
+});
+
+document.getElementById('korpa-sadrzaj').innerHTML = html;
+
     
