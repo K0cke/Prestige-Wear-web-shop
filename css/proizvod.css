@@ -349,6 +349,79 @@ body {
     color: #d1d5db;
 }
 
+/* --- GALERIJA SLIKA --- */
+
+.slika-galerija-kontejner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.galerija-strelica {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Tamna pozadina strelice */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    
+    /* Inicijalna vidljivost (al ne mnogo) */
+    opacity: 0.2; 
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Strelice postaju 100% vidljive kada se pređe mišem preko CIJELOG kontejnera slike */
+.slika-galerija-kontejner:hover .galerija-strelica {
+    opacity: 0.8;
+}
+
+/* Kada se mišem pređe baš preko same strelice, ona može malo zasvijetliti */
+.galerija-strelica:hover {
+    background: var(--gold-main); /* Ili koja ti je već zlatna boja */
+    opacity: 1 !important;
+}
+
+#strelica-levo {
+    left: 15px;
+}
+
+#strelica-desno {
+    right: 15px;
+}
+
+
+/*ako se odlucimo da dodamo i dugmice za boje, ovde je css za njih */
+
+.boja-kruzic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.boja-kruzic:hover {
+    transform: scale(1.1);
+}
+
+.boja-kruzic.active {
+    transform: scale(1.15);
+    border-color: var(--gold-main, #ffc107);
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+
+
 /* --- DUGMIĆI ZA VELIČINE --- */
 #proizvod-velicine .btn {
     border-color: var(--border-gold);

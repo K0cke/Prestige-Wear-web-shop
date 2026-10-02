@@ -7,14 +7,16 @@ const ukupnaCenaEl = document.getElementById('korpa-ukupna-cena');
 function prikaziKorpu() {
     // Ako je korpa prazna
     if (korpa.length === 0) {
-        korpaContainer.innerHTML = `
-            <div class="col-12 text-center py-5">
-                <h3 class="text-white mb-3">Vaša korpa je trenutno prazna.</h3>
-                <p class="text-light opacity-75 mb-4">Izaberite neke od naših vrhunskih modela iz kataloga.</p>
-                <a href="./katalog.html" class="btn btn-warning px-4 py-2 fw-bold text-uppercase">Idi na katalog</a>
-            </div>
-        `;
-        checkoutContainer.style.display = 'none';
+        if(korpaContainer) {
+            korpaContainer.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <h3 class="text-white mb-3">Vaša korpa je trenutno prazna.</h3>
+                    <p class="text-light opacity-75 mb-4">Izaberite neke od naših vrhunskih modela iz kataloga.</p>
+                    <a href="./katalog.html" class="btn btn-warning px-4 py-2 fw-bold text-uppercase">Idi na katalog</a>
+                </div>
+            `;
+        }
+        if(checkoutContainer) checkoutContainer.style.display = 'none';
         return;
     }
 
@@ -23,9 +25,12 @@ function prikaziKorpu() {
     let ukupnaCena = 0;
 
     korpa.forEach((item, index) => {
-        // Pretvaramo cenu iz stringa (npr. "4.500 RSD") u čist broj za računanje
-        let cenaBroj = parseInt(item.cena.replace(/\D/g, ''));
-        ukupnaCena += cenaBroj;
+        // Provjera je li cijena već čisti broj (iz novog koda) ili string (iz starijih testova)
+        let cenaBroj = typeof item.cena === 'string' ? parseInt(item.cena.replace(/\D/g, '')) : parseInt(item.cena);
+        ukupnaCena += (cenaBroj || 0);
+
+        // Formatiramo cijenu natrag u "X.XXX RSD" za lijep prikaz
+        let formatiranaCena = cenaBroj.toLocaleString("sr-RS") + " RSD";
 
         html += `
             <div class="col-12">
@@ -45,7 +50,7 @@ function prikaziKorpu() {
 
                     <!-- Cena i dugme za brisanje -->
                     <div class="d-flex align-items-center gap-4">
-                        <span class="fs-5 fw-bold" style="color: var(--gold-main);">${item.cena}</span>
+                        <span class="fs-5 fw-bold" style="color: var(--gold-main);">${formatiranaCena}</span>
                         <button class="btn btn-outline-danger btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" onclick="ukloniIzKorpe(${index})" title="Ukloni artikal">
                             <i class="fas fa-trash-alt"></i>
                         </button>
@@ -56,9 +61,9 @@ function prikaziKorpu() {
         `;
     });
 
-    korpaContainer.innerHTML = html;
-    ukupnaCenaEl.innerText = ukupnaCena.toLocaleString() + " RSD";
-    checkoutContainer.style.display = 'block';
+    if(korpaContainer) korpaContainer.innerHTML = html;
+    if(ukupnaCenaEl) ukupnaCenaEl.innerText = ukupnaCena.toLocaleString("sr-RS") + " RSD";
+    if(checkoutContainer) checkoutContainer.style.display = 'block';
 }
 
 // Funkcija za brisanje pojedinačnog artikla
@@ -66,29 +71,39 @@ window.ukloniIzKorpe = function(index) {
     korpa.splice(index, 1); // Izbaci iz niza
     localStorage.setItem('prestigeKorpa', JSON.stringify(korpa)); // Sačuvaj osveženo stanje
     prikaziKorpu(); // Osveži prikaz
+    osveziBedz(); // Odmah osveži brojku u headeru
+}
+
+// Funkcija za osvežavanje ikonice u headeru
+function osveziBedz() {
+    const trenutnaKorpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
+    const badge = document.getElementById('broj-u-korpi');
+    
+    if (badge) {
+        if (trenutnaKorpa.length > 0) {
+            badge.innerText = trenutnaKorpa.length;
+            badge.style.display = 'inline-block';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
 }
 
 // Pokreni prikaz pri učitavanju stranice
 prikaziKorpu();
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    const korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
-    const badge = document.getElementById('broj-u-korpi');
-    
-    if (badge && korpa.length > 0) {
-        badge.innerText = korpa.length;
-        badge.style.display = 'inline-block';
-    }
+    osveziBedz();
 });
 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('skrolovan');
-    } else {
-        header.classList.remove('skrolovan');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('skrolovan');
+        } else {
+            header.classList.remove('skrolovan');
+        }
     }
 });
 

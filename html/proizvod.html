@@ -74,9 +74,19 @@
             
             <!-- LEVA STRANA: Glavna slika i galerija malih slika -->
             <div class="col-lg-6">
-                <div class="product-main-image-box p-3 rounded-4 mb-3">
+                <!-- Dodata klasa slika-galerija-kontejner u postojeći div -->
+                <div class="product-main-image-box slika-galerija-kontejner p-3 rounded-4 mb-3">
+                    
+                    <!-- Strelica Lijevo -->
+                    <button id="strelica-levo" class="galerija-strelica"><i class="fas fa-chevron-left"></i></button>
+                    
                     <img id="proizvod-slika" src="" alt="Proizvod" class="img-fluid rounded-3 w-100 object-fit-cover" style="max-height: 500px;">
+                    
+                    <!-- Strelica Desno -->
+                    <button id="strelica-desno" class="galerija-strelica"><i class="fas fa-chevron-right"></i></button>
+                    
                 </div>
+                
                 <!-- Galerija slika (ispod glavne) -->
                 <div class="d-flex gap-3" id="proizvod-galerija">
                     <!-- JS ubacuje male slike ovde -->
@@ -105,7 +115,6 @@
                 <div class="mb-4">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <label class="form-label text-white fw-semibold mb-0">Veličina:</label>
-                        <a href="#" class="text-warning text-decoration-none small">Vodič za veličine</a>
                     </div>
                     <div id="proizvod-velicine" class="d-flex gap-2 flex-wrap">
                         <!-- JS ubacuje dugmiće za veličine -->
