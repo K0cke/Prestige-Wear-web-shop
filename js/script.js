@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const track = document.getElementById('reviews-track');
         const viewport = document.getElementById('reviews-grid');
         const pageLabel = document.getElementById('reviews-page');
+        if (!form || !track) return;
         let page = 0;
         const cardsPerPage = () => window.matchMedia('(max-width: 767.98px)').matches ? 1 : 3;
         const pageCount = () => Math.max(1, Math.ceil(track.children.length / cardsPerPage()));

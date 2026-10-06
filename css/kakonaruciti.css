@@ -564,7 +564,7 @@ footer {
     .mreze-kontejner {
         justify-content: center !important;
         display: flex !important;
-        margin: 15px 0 0 0 !important; /* Uklonjen problematični margin-left: 67% */
+        margin-left: 67% !important; /* Uklonjen problematični margin-left: 67% */
         gap: 15px !important;
     }
 }

@@ -56,8 +56,128 @@ const proizvodi = {
         ],
         velicine: ["S", "M", "L", "XL"],
         opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
+    },
+
+
+    "tech-fleece-crno-syna-gornji-deo": {
+        naziv: "Nike Tech Fleece Crno Syna - Gornji deo",
+        kategorija: "GORNJI DEO",
+        cena: "4.990 RSD",
+        staraCena: "8.990 RSD",
+        boje: [
+            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg","../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp",] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
+    },
+
+    "tech-fleece-crno-syna-donji-deo": {
+        naziv: "Nike Tech Fleece Crno Syna - Donji deo",
+        kategorija: "DONJI DEO",
+        cena: "6.990 RSD",
+        staraCena: "11.990 RSD",
+        boje: [
+            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-back-set.webp"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
     }
+
+//ovde idu jos proizvodi
+
 };
+
+
+// 2. SEO FUNKCIJA
+function postaviDinamicniSEO(proizvod, urlId) {
+    if (!proizvod) return;
+
+    const domenSajta = "https://prestigewearr.netlify.app/"; // Zameni sa svojim domenom kad ga postaviš
+
+    document.title = `${proizvod.naziv} | Prestige Wear`;
+    
+    const metaOpis = document.querySelector('meta[name="description"]');
+    if (metaOpis) metaOpis.setAttribute("content", proizvod.opis);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", `${proizvod.naziv} | Prestige Wear`);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", proizvod.opis);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", `${domenSajta}/proizvod.html?id=${urlId}`);
+
+    let apsolutnaPutanjaSlike = "";
+    if (proizvod.boje && proizvod.boje.length > 0 && proizvod.boje[0].slike.length > 0) {
+        const cistaPutanja = proizvod.boje[0].slike[0].replace('../', '');
+        apsolutnaPutanjaSlike = `${domenSajta}/${cistaPutanja}`;
+        
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute("content", apsolutnaPutanjaSlike);
+    }
+
+    const cistaCena = proizvod.cena.replace(/\D/g, ''); 
+
+    const schemaPodaci = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": proizvod.naziv,
+        "image": apsolutnaPutanjaSlike,
+        "description": proizvod.opis,
+        "brand": {
+            "@type": "Brand",
+            "name": "Prestige Wear"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": `${domenSajta}/proizvod.html?id=${urlId}`,
+            "priceCurrency": "RSD",
+            "price": cistaCena,
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+        }
+    };
+
+    const scriptElement = document.createElement('script');
+    scriptElement.type = 'application/ld+json';
+    scriptElement.textContent = JSON.stringify(schemaPodaci);
+    document.head.appendChild(scriptElement);
+}
+
+// 3. POZIV SKRIPTE (Na samom dnu, nakon definisane baze i funkcije)
+const urlParams = new URLSearchParams(window.location.search);
+const proizvodId = urlParams.get('id');
+const trenutniProizvod = proizvodi[proizvodId];
+
+if (trenutniProizvod) {
+    postaviDinamicniSEO(trenutniProizvod, proizvodId);
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+        const btnOtvori = document.getElementById('otvori-meni');
+        const btnZatvori = document.getElementById('zatvori-meni');
+        const overlay = document.getElementById('mobilniOverlay');
+
+        if (btnOtvori && btnZatvori && overlay) {
+            // Otvori meni
+            btnOtvori.addEventListener('click', function() {
+                overlay.classList.add('otvoren');
+                // Sprečava skrolovanje stranice u pozadini dok je meni otvoren
+                document.body.style.overflow = 'hidden'; 
+            });
+
+            // Zatvori meni
+            btnZatvori.addEventListener('click', function() {
+                overlay.classList.remove('otvoren');
+                // Vraća skrolovanje stranice
+                document.body.style.overflow = ''; 
+            });
+        }
+    });
 
 document.addEventListener("DOMContentLoaded", () => {
     // --- 1. UČITAVANJE PODATAKA O PROIZVODU ---
@@ -291,3 +411,35 @@ function prikaziPreporuceneProizvode(trenutniId) {
 
     kontejner.innerHTML = html;
 }
+
+
+let html = '';
+
+korpa.forEach((item, index) => {
+    html += `
+        <div class="col-12">
+            <div class="card bg-dark border border-secondary border-opacity-25 rounded-4 p-3 d-flex flex-row align-items-center justify-content-between">
+                
+                <!-- Celokupan levi i srednji deo je link ka stranici proizvoda -->
+                <a href="./proizvod.html?id=${item.id}" class="d-flex align-items-center text-decoration-none text-white flex-grow-1">
+                    <img src="${item.slika}" alt="${item.naziv}" class="rounded-3 object-fit-cover me-3" style="width: 70px; height: 70px;">
+                    <div>
+                        <h5 class="fs-6 fw-bold mb-1">${item.naziv}</h5>
+                        <p class="text-light opacity-75 small mb-0">Boja: ${item.boja} | Veličina: ${item.velicina}</p>
+                    </div>
+                </a>
+
+                <!-- Desni deo: Cena i dugme za brisanje (odvojeno od linka) -->
+                <div class="d-flex align-items-center gap-4 ms-3">
+                    <span class="fw-bold text-nowrap" style="color: var(--gold-main);">${item.cena.toLocaleString()} RSD</span>
+                    <button onclick="ukloniIzKorpe(${index})" class="btn btn-outline-danger btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    `;
+});
+
+document.getElementById('korpa-sadrzaj').innerHTML = html;

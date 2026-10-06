@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Zabranjujemo indeksiranje korpe i kase radi privatnosti i izbegavanja dupliranog sadržaja
+Disallow: /korpa.html
+Disallow: /checkout.html
+
+# Putanja do tvoje mape sajta (zameni sa svojom Netlify adresom ili domenom)
+Sitemap: https://prestigewearr.netlify.app/sitemap.xml
