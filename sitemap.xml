@@ -52,6 +52,24 @@
 </url>
 
 
+<!-- Proizvod 5: Nike Tech Fleece Syna - Gorni deo -->
+<url>
+  <loc>https://prestigewearr.netlify.app/html/proizvod?id=tech-fleece-crno-syna-gornji-deo</loc>
+  <lastmod>2026-10-06</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
+<!-- Proizvod 6: Nike Tech Fleece Syna - Donji deo -->
+<url>
+  <loc>https://prestigewearr.netlify.app/html/proizvod?id=tech-fleece-crno-syna-donji-deo</loc>
+  <lastmod>2026-10-06</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
 
   <!-- Informativne stranice -->
   <url>
