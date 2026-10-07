@@ -81,3 +81,37 @@ window.addEventListener("scroll", () => {
         header.classList.toggle("skrolovan", window.scrollY > 30);
     }
 });
+
+
+
+/*Skripta za kolacice (cookies) - prihvatanje ili odbijanje */
+    document.addEventListener("DOMContentLoaded", function () {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+
+    // Proveri da li postoji sačuvan status (bilo da je prihvaćeno ili odbijeno)
+    if (!localStorage.getItem("statusKolacica")) {
+      cookieBanner.classList.remove("d-none"); // Prikaži baner
+    }
+
+    // Funkcija za sakrivanje banera uz animaciju gubljenja (opciono, daje lepši osećaj)
+    function sakrijBaner() {
+      cookieBanner.style.opacity = '0';
+      setTimeout(() => cookieBanner.classList.add("d-none"), 300);
+    }
+
+    // Ako klikne Prihvati
+    acceptBtn.addEventListener("click", function () {
+      localStorage.setItem("statusKolacica", "prihvaceno");
+      cookieBanner.style.transition = "opacity 0.3s ease";
+      sakrijBaner();
+    });
+
+    // Ako klikne Odbij
+    rejectBtn.addEventListener("click", function () {
+      localStorage.setItem("statusKolacica", "odbijeno");
+      cookieBanner.style.transition = "opacity 0.3s ease";
+      sakrijBaner();
+    });
+  });
