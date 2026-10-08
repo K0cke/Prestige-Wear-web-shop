@@ -454,6 +454,35 @@ body {
     text-decoration: line-through;
 }
 
+/* Kontejner za boje na kartici u katalogu */
+.katalog-boje {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+/* Izgled samih kružića prilagođen za katalog */
+.boja-kruzic {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.boja-kruzic:hover {
+    transform: scale(1.15);
+}
+
+.boja-kruzic.active {
+    transform: scale(1.2);
+    border-color: var(--gold-main, #ffc107);
+    box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+}
+
 .proizvod-dugme {
     display: flex;
     justify-content: space-between;

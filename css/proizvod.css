@@ -398,7 +398,6 @@ body {
 }
 
 
-/*ako se odlucimo da dodamo i dugmice za boje, ovde je css za njih */
 
 .boja-kruzic {
     width: 32px;
@@ -470,6 +469,47 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
     letter-spacing: 1px;
+}
+
+
+/* Zeleni pop-up za korpu */
+.cart-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1e3a29;
+    border: 1px solid #2ecc71;
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.cart-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cart-toast-icon {
+    width: 20px;
+    height: 20px;
+    background: #2ecc71;
+    color: #1e3a29;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
 }
 
 /* --- FOOTER --- */

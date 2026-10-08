@@ -2,7 +2,7 @@
 const proizvodi = {
 
     "nike-tech-fleece-joggers--donji-deo": {
-        naziv: "Nike Tech Fleece Joggers - Donji deo",
+        naziv: "Nike Tech Fleece 2025 - Donji deo",
         kategorija: "DONJI DEO",
         cena: "6.990 RSD",
         staraCena: "11.990 RSD",
@@ -49,8 +49,8 @@ const proizvodi = {
     "tech-fleece-crno-syna": {
         naziv: "Nike Tech Fleece Crno Syna",
         kategorija: "KOMPLET",
-        cena: "6.990 RSD",
-        staraCena: "11.990 RSD",
+        cena: "12.490 RSD",
+        staraCena: "21.990 RSD",
         boje: [
             { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-detail-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-tracksuit-hq3748-010-_-hq3749-010-back.webp"] }
         ],
@@ -62,7 +62,7 @@ const proizvodi = {
     "tech-fleece-crno-syna-gornji-deo": {
         naziv: "Nike Tech Fleece Crno Syna - Gornji deo",
         kategorija: "GORNJI DEO",
-        cena: "4.990 RSD",
+        cena: "5.990 RSD",
         staraCena: "8.990 RSD",
         boje: [
             { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg","../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp",] }
@@ -74,8 +74,8 @@ const proizvodi = {
     "tech-fleece-crno-syna-donji-deo": {
         naziv: "Nike Tech Fleece Crno Syna - Donji deo",
         kategorija: "DONJI DEO",
-        cena: "6.990 RSD",
-        staraCena: "11.990 RSD",
+        cena: "4.990 RSD",
+        staraCena: "8.990 RSD",
         boje: [
             { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-back-set.webp"] }
         ],
@@ -301,33 +301,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const dodajUKorpu = (preusmeri = false) => {
-        let korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
-        const slikaZaKorpu = trenutniNizSlika.length > 0 ? trenutniNizSlika[0] : "";
+    let korpa = JSON.parse(localStorage.getItem('prestigeKorpa')) || [];
+    const slikaZaKorpu = trenutniNizSlika.length > 0 ? trenutniNizSlika[0] : "";
 
-        const artikal = {
-            id: id,
-            naziv: proizvod.naziv,
-            cena: parseInt(proizvod.cena.replace(/\D/g, '')),
-            slika: slikaZaKorpu,
-            velicina: izabranaVelicina,
-            boja: izabranaBoja
-        };
-
-        korpa.push(artikal);
-        localStorage.setItem('prestigeKorpa', JSON.stringify(korpa));
-
-        const badge = document.getElementById('broj-u-korpi');
-        if (badge) {
-            badge.innerText = korpa.length;
-            badge.style.display = 'inline-block';
-        }
-
-        if (preusmeri) {
-            window.location.href = './korpa.html';
-        } else {
-            alert('Proizvod je uspješno dodan u korpu!');
-        }
+    const artikal = {
+        id: id,
+        naziv: proizvod.naziv,
+        cena: parseInt(proizvod.cena.replace(/\D/g, '')),
+        slika: slikaZaKorpu,
+        velicina: izabranaVelicina,
+        boja: izabranaBoja
     };
+
+    korpa.push(artikal);
+    localStorage.setItem('prestigeKorpa', JSON.stringify(korpa));
+
+    const badge = document.getElementById('broj-u-korpi');
+    if (badge) {
+        badge.innerText = korpa.length;
+        badge.style.display = 'inline-block';
+    }
+
+    if (preusmeri) {
+        window.location.href = './korpa.html';
+    } else {
+        showToast('Proizvod je uspešno dodat u korpu!');
+    }
+};
+
+// Funkcija koja kreira i prikazuje pop-up
+function showToast(message) {
+    let toast = document.getElementById('cart-toast');
+    
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'cart-toast';
+        toast.className = 'cart-toast';
+        toast.innerHTML = `
+            <span class="cart-toast-icon">✓</span>
+            <span id="cart-toast-msg"></span>
+        `;
+        document.body.appendChild(toast);
+    }
+
+    document.getElementById('cart-toast-msg').innerText = message;
+
+    // Prikazivanje sa animacijom
+    setTimeout(() => toast.classList.add('show'), 10);
+
+    // Sklanjanje posle 3 sekunde
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
 
     const btnDodaj = document.getElementById('dodaj-u-korpu');
     const btnPoruci = document.getElementById('poruci-odmah');

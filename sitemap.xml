@@ -116,4 +116,11 @@
     <priority>0.4</priority>
   </url>
 
+  <url>
+    <loc>https://prestigewearr.netlify.app/html/kolacici</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+</url>
+
 </urlset>

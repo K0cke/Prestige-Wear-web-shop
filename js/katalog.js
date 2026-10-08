@@ -115,3 +115,32 @@ window.addEventListener("scroll", () => {
       sakrijBaner();
     });
   });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sviKruzici = document.querySelectorAll('.katalog-boje .boja-kruzic');
+
+    sviKruzici.forEach(kruzic => {
+        kruzic.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            
+            // 1. Pronalazi roditeljsku karticu (.proizvod-kartica)
+            const kartica = this.closest('.proizvod-kartica');
+            if (!kartica) return;
+
+            // 2. Pronalazi sliku unutar .slika-proizvoda taga
+            const slika = kartica.querySelector('.slika-proizvoda img');
+            const novaSlikaSrc = this.getAttribute('data-slika');
+
+            // 3. Menja izvor slike
+            if (slika && novaSlikaSrc) {
+                slika.src = novaSlikaSrc;
+            }
+
+            // 4. Ažurira active klasu za kružiće u toj kartici
+            const kruziciUovojKartici = kartica.querySelectorAll('.boja-kruzic');
+            kruziciUovojKartici.forEach(k => k.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
