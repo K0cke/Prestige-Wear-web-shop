@@ -18,18 +18,18 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Sprečava pomeranje slike pri skrolovanju */
+    background-attachment: fixed; 
     color: #ffffff;
     font-family: 'Inter', sans-serif;
 
 
-    /* Pravila koja sprečavaju omekšavanje/zamućivanje slike u browseru */
+    
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
 
 
-/* --- NAVIGACIJA (Ujednačena sa index.html) --- */
+/* --- NAVIGACIJA --- */
 header {
     background-color: #050505;
     position: fixed;
@@ -116,7 +116,7 @@ header.skrolovan {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    display: none; /* DODAJ OVO! Skriva hamburger meni na kompjuteru */
+    display: none; 
     align-items: center;
     padding: 5px;
     transition: transform 0.2s ease, color 0.2s ease;
@@ -324,17 +324,13 @@ footer {
         .form-control { background-color: #1a1a1a; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; }
         .form-control:focus { background-color: #222; border-color: var(--gold-main, #ffc107); color: #fff; box-shadow: none; }
         .checkout-summary { background-color: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; }
-  
-        /* Svjetlija boja za otkucani tekst u svim poljima */
-.form-control {
-    color: #ffffff !important;
-}
+        .form-control {color: #ffffff !important;}
 
-/* Svjetlija boja za placeholder (sivi tekst pomoći) */
-.form-control::placeholder {
+
+  .form-control::placeholder {
     color: rgba(255, 255, 255, 0.6) !important;
     opacity: 1;
-}
+   }
 
 header {
     position: fixed;
@@ -344,13 +340,13 @@ header {
     z-index: 1050 !important;
 }
 
-/* 2. Vraćamo .navigacija na njene originalne stilove iz korpa.css */
+
 .navigacija {
     position: relative;
     width: 100%;
 }
 
-/* 3. Desni blok drži niži sloj da glatko prolazi ispod zaglavlja */
+
 .checkout-summary {
     background-color: #1a1a1a;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -409,21 +405,21 @@ header {
         font-size: 25px !important;
     }
 
-    /* Dodaj ovo unutar @media (max-width: 768px) bloka */
+  
 .navigacija ul {
-    display: none !important; /* Skriva desktop linkove na mobitelu */
+    display: none !important; 
 }
 
 .hamburger-btn {
-    display: flex !important; /* Pokazuje hamburger meni na mobitelu */
+    display: flex !important; 
 }
 
     body {
-        padding-top: 40px !important; /* Smanjeno sa 90px na 65px za mobilni */
+        padding-top: 40px !important; 
     }
 
     .steps-wrapper, .hero-card-container {
-        margin-top: 10px !important; /* Smanjuje dodatnu gornju marginu kontejnera */
+        margin-top: 10px !important; 
     }
 
     /* POPRAVAK FOOTERA NA MOBILNOM */
@@ -451,15 +447,15 @@ header {
         align-items: center !important;
     }
 
-    /* U tvom fajlu na dnu pise margin-left: 67% !important; - To MORAS obrisati/promijeniti u ovo: */
+  
 .mreze-kontejner {
     justify-content: center !important;
     display: flex !important;
-    margin: 15px 0 0 0 !important; /* Popravljeno! */
+    margin: 15px 0 0 0 !important; 
     gap: 15px !important;
 }
 
-    /* --- POPRAVAK ZA CENTRIRANJE MREZA --- */
+
 .krug-mreza, .krug-mrezaig, .krug-mrezayt {
     margin: 0 !important;
 }

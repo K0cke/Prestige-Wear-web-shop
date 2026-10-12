@@ -3,17 +3,17 @@
     --border-gold: rgba(201, 147, 59, 0.3);
 }
 
-/* Sprječavanje probijanja ekrana u stranu (horizontalni skrol) */
+
 html, body {
     overflow-x: hidden;
     max-width: 100vw;
     background-color: #0d0d0d;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    padding-top: 90px; /* Razmak da navigacija ne prekriva hero sekciju */
+    padding-top: 90px; 
 }
 
-/* --- STRANICA KAKO NARUČITI --- */
+
 .steps-wrapper {
     max-width: 850px;
     margin: 0 auto;

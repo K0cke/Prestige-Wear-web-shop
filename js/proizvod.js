@@ -13,7 +13,7 @@ const proizvodi = {
             { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Muški donji deo trenerke Nike Tech Fleece Joggers sa prepoznatljivim krojem i džepom sa rajfešlusom."
+        opis: "Najnoviji model Nike Tech Fleece donjeg dela za 2025. godinu donosi savršeno izbalansiran kroj koji se blago sužava ka zglobovima. Izrađen je od laganog, ali izuzetno toplog pamučnog fleece materijala koji zadržava temperaturu tela bez dodatne težine. Prepoznatljivi bočni džep sa rajferšlusom obloženim trakom pruža siguran prostor za telefon i ključeve. Elastičan pojas sa podesivim učkurom omogućava maksimalnu udobnost tokom celodnevnog nošenja. Dostupan u više atraktivnih nijansi, ovaj donji deo je nezaobilazan komad za moderan ulični stil."
     },
 
     "nike-tech-fleece-joggers--gornji-deo": {
@@ -28,11 +28,11 @@ const proizvodi = {
             { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Ekskluzivni Nike Tech Fleece Joggers gornji deo u vise razlicitih boja."
+        opis: "Dizajniran za one koji ne pristaju na kompromise između udobnosti i stila, ovaj gornji deo duks-jakne pruža vrhunsku zaštitu od hladnoće. Opremljen je funkcionalnim rajferšlusom punom dužinom i višedelnom kapuljačom koja lepo prianja uz glavu. Džep sa rajferšlusom na rukavu predstavlja prepoznatljiv Tech Fleece pečat i idealan je za sitnice. Premium materijal sprečava gubljenje oblika čak i nakon višekratnog pranja. Lako se kombinuje kako sa sportskim, tako i sa svakodnevnim urbano-casual outfitima."
     },
 
     "nike-tech-fleece-joggers-komplet": {
-        naziv: "Nike Tech Fleece Joggers",
+        naziv: "Nike Tech Fleece Joggers - Komplet",
         kategorija: "KOMPLET",
         cena: "13.490 RSD",
         staraCena: "22.990 RSD",
@@ -43,7 +43,7 @@ const proizvodi = {
             { ime: "Crna", hex: "#111111", slike: ["../img/proizvodi slike/techlfleececrni2025_1.webp", "../img/proizvodi slike/techlfleececrni2025_2.webp", "../img/proizvodi slike/techlfleececrni2025_3.webp", "../img/proizvodi slike/techlfleececrni2025_4.webp", "../img/proizvodi slike/techlfleececrni2025_5.webp", "../img/proizvodi slike/techlfleececrni2025_6.webp", "../img/proizvodi slike/techlfleececrni2025_7.webp", "../img/proizvodi slike/techlfleececrni2025_8.webp", "../img/proizvodi slike/techlfleececrni2025_9.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Ekskluzivni Nike Tech Fleece Joggers komplet u vise razlicitih boja."
+        opis: "Kompletan Nike Tech Fleece 2025 komplet predstavlja vrhunac sportske elegancije i funkcionalnosti. Spoj gornjeg i donjeg dela u istoj nijansi garantuje besprekoran vizuelni utisak gde god da se pojaviš. Dvoslojni termo materijal pruža optimalnu toplotu bez glomaznosti, čineći ga idealnim za sve sezone. Precizno ukrojeni šavovi prate prirodne linije tela dajući punu slobodu pokreta. Izaberi svoju omiljenu boju i uživaj u maksimalnom komforu i premium izgledu."
     },
     
     "tech-fleece-crno-syna": {
@@ -52,12 +52,11 @@ const proizvodi = {
         cena: "12.490 RSD",
         staraCena: "21.990 RSD",
         boje: [
-            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-detail-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-tracksuit-hq3748-010-_-hq3749-010-back.webp"] }
+            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-detail-set.jpg", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-tracksuit-hq3748-010-_-hq3748-010-back.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
+        opis: "Limitirana kolaboracija inspirisana Syna World estetikom i Central Cee stilom donosi ekskluzivan dizajn na klasiku. Karakterišu ga specifični roze/ružičasti detalji i logotipi koji razbijaju klasičnu crnu podlogu. Izrađen je od specijalno tretiranog fleece pamuka visoke gustine koji drži formu i pruža premium osećaj na dodir. Unutrašnjost je meka i ugodna za kožu, dok spoljašnost garantuje otpornost na habanje. Ovaj komplet je pravi kolekcionarski komad za ljubitelje ulične mode koji žele da se istaknu."
     },
-
 
     "tech-fleece-crno-syna-gornji-deo": {
         naziv: "Nike Tech Fleece Crno Syna - Gornji deo",
@@ -65,10 +64,10 @@ const proizvodi = {
         cena: "5.990 RSD",
         staraCena: "8.990 RSD",
         boje: [
-            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg","../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp",] }
+            { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-front-set.jpg","../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-hoodie-hq3748-010-model-back-set.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
+        opis: "Ekskluzivni Syna World x Nike gornji deo duks kombinacije nosi jedinstvenu grafiku na leđima i prednjem delu. Kapuljača sa podesivim trakama i upečatljivim roze detaljima daje mu prepoznatljiv karakter. Opremljen je dvostranim rajferšlusom i skrivenim džepovima za moderan siluetni izgled. Materijal pruža sjajnu termoizolaciju tokom hladnijih dana. Savršen izbor za kombinovanje sa farmerkama ili crnim donjim delovima trenerke."
     },
 
     "tech-fleece-crno-syna-donji-deo": {
@@ -80,12 +79,108 @@ const proizvodi = {
             { ime: "Crno-Syna", hex: "#B76E79", slike: ["../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-front-set.webp", "../img/Nike Tech Fleece Syna/syna-world-x-nike-central-cee-tech-fleece-black-sweatpants-hq3749-010-model-back-set.webp"] }
         ],
         velicine: ["S", "M", "L", "XL"],
-        opis: "Kombinacija crne i sive boje pruža moderan sportski izgled."
+        opis: "Syna specijalno izdanje donjeg dela donosi prepoznatljive grafičke akcente na nogavici u kontrastnoj roze nijansi. Suženi slim-fit kroj u kombinaciji sa elastičnim patentima na dnu ističe tvoje patike na pravi način. Duboki džepovi sa rajferšlusima osiguravaju bezbednost ličnih stvari u pokretu. Izrađen od mešavine pamuka i poliestera za dugotrajnost i vrhunsku udobnost. Idealan za sve koji traže autentičan i hrabar stil."
+    },
+
+    "tech-fleece-2023-donji-deo": {
+        naziv: "Nike Tech Fleece 2023 Crni - Donji deo",
+        kategorija: "DONJI DEO",
+        cena: "6.990 RSD",
+        staraCena: "10.990 RSD",
+        boje: [
+            { ime: "Crna", hex: "#111111", slike: ["../img/Nike Tech Fleece 2023/Crni/gornjidonjideosedi1.webp"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Klasik iz 2023. kolekcije u mat crnoj boji koji nikada ne izlazi iz mode. Odlikuje ga izuzetno čist i minimalistički dizajn sa diskretnim Nike logotipom na kuku. Anatomski oblikovani šavovi u predelu kolena omogućavaju potpuno prirodno kretanje. Veliki bočni džep sa uzdužnim rajferšlusom pruža funkcionalnost i estetski prepoznatljiv pečat. Materijal pruža blagu elastičnost i zadržava punu mekoću tokom nosenja."
+    },
+
+    "tech-fleece-2023-komplet": {
+        naziv: "Nike Tech Fleece 2023 Crni - Komplet",
+        kategorija: "KOMPLET",
+        cena: "12.990 RSD",
+        staraCena: "18.990 RSD",
+        boje: [
+            { ime: "Crna", hex: "#111111", slike: ["../img/Nike Tech Fleece 2023/Crni/komplet1.webp", "../img/Nike Tech Fleece 2023/Crni/gornjideo1.webp", "../img/Nike Tech Fleece 2023/Crni/gornjideo2.webp", "../img/Nike Tech Fleece 2023/Crni/gornjideo3pozadi.webp", "../img/Nike Tech Fleece 2023/Crni/gornjidonjideosedi1.webp"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Bezvremenski crni Nike Tech Fleece komplet iz 2023. godine predstavlja osnovu svakog dobrog garderobera. Kombinacija duksa sa kapuljačom i donjeg dela stvara uniformisan, oštar i moderan izgled. Lagana troslojna tkanina efikasno čuva toplotu tela dok istovremeno dopušta koži da diše. Ojačani rajsferšlusi i elastične trake osiguravaju dugotrajnost i stabilnost kroja. Savršen za večernje izlaske, putovanja i svakodnevne aktivnosti."
+    },
+
+    "tech-fleece-2023-sivi-gornji-deo": {
+        naziv: "Nike Tech Fleece 2023 Sivi - Gornji deo",
+        kategorija: "GORNJI DEO",
+        cena: "7.490 RSD",
+        staraCena: "11.490 RSD",
+        boje: [
+            { ime: "Siva", hex: "#808080", slike: ["../img/Nike Tech Fleece 2023/Sivi/gornjideo1.jpg", "../img/Nike Tech Fleece 2023/Sivi/gornjideo2.jpg", "../img/Nike Tech Fleece 2023/Sivi/gornjideo3pozadi.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Prepoznatljiva svetlosiva nijansa daje ovom gornjem delu svež i upečatljiv sportski izgled. Poseduje dvoimeni rajferšlus i visoku kragnu integrisanu sa kapuljačom za dodatnu zaštitu od vetra. Džep sa crnim okvirom na rukavu stvara odličan vizuelni kontrast. Izrađen od meke i tople Tech Fleece tkanine koja ne stvara osećaj težine. Odličan izbor za slojevito oblačenje tokom prelaznog perioda."
+    },
+
+    "tech-fleece-2023-sivi-donji-deo": {
+        naziv: "Nike Tech Fleece 2023 Sivi - Donji deo",
+        kategorija: "DONJI DEO",
+        cena: "6.490 RSD",
+        staraCena: "9.990 RSD",
+        boje: [
+            { ime: "Siva", hex: "#808080", slike: ["../img/Nike Tech Fleece 2023/Sivi/komplet1.jpg", "../img/Nike Tech Fleece 2023/Sivi/komplet2.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Sivi Tech Fleece donji deo donosi idealan balans između ulične mode i sportske opreme. Elegantan kroj koji prati liniju noge naglašava figuru bez zatezanja. Podesivi pojas sa pertlom osigurava da donji deo stoji čvrsto na mestu bez obzira na intenzitet pokreta. Džepovi obloženi kvalitetnim rajferšlusima drže sve tvoje dragocenosti na sigurnom. Neutralna siva boja lako se kombinuje sa bilo kojom bojom patika."
+    },
+
+    "tech-fleece-2023-sivi-komplet": {
+        naziv: "Nike Tech Fleece 2023 Sivi - Komplet",
+        kategorija: "KOMPLET",
+        cena: "13.490 RSD",
+        staraCena: "19.990 RSD",
+        boje: [
+            { ime: "Siva", hex: "#808080", slike: ["../img/Nike Tech Fleece 2023/Sivi/komplet1.jpg", "../img/Nike Tech Fleece 2023/Sivi/komplet2.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Sivi komplet iz 2023. serije jedan je od najpopularnijih modela ikada izbačenih u Tech Fleece liniji. Svetlosivi tonovi u kombinaciji sa crnim rajferšlusima daju moćan i čist vizuelni efekat. Dizajniran je da pruži maksimalnu udobnost bilo da si u teretani, šetnji ili na kafu u gradu. Tkanina zadržava prirodnu toplotu tela i štiti od hladnih vetrova. Idealan komplet za svakoga ko voli proverenu klasiku."
+    },
+
+    "tech-fleece-2023-crno-sivi-gornji-deo": {
+        naziv: "Nike Tech Fleece 2023 Crno-Sivi - Gornji deo",
+        kategorija: "GORNJI DEO",
+        cena: "7.990 RSD",
+        staraCena: "11.990 RSD",
+        boje: [
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo1.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo2pozadi.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo3jpg.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Dvobojna kombinacija crnih i sivih panela daje ovom gornjem delu dinamiku i moderan izgled. Strateški raspoređeni blokovi boja vizuelno sužavaju siluetu i naglašavaju ramena. Kapuljača od višedelnog materijala stabilno stoji i nudi odličnu zaštitu od vetra. Funkcionalni džepovi sa zaštitnom trakom osiguravaju da unutrašnjost ostane suva. Pravi izbor za sve koji žele nešto više od jednobojnog duksa."
+    },
+
+    "tech-fleece-2023-crno-sivi-donji-deo": {
+        naziv: "Nike Tech Fleece 2023 Crno-Sivi - Donji deo",
+        kategorija: "DONJI DEO",
+        cena: "6.790 RSD",
+        staraCena: "10.490 RSD",
+        boje: [
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/Nike Tech Fleece 2023/CrnoSivi/komplet1.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/komplet2.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Atraktivan dvobojni donji deo koji kombinuje sivu bazu sa kontrastnim crnim detaljima i džepovima. Ergonomske linije na kolenima sprječavaju rastezanje materijala tokom guranja i sedenja. Podesivi struk pruža stabilno pristajanje bez pritiska na stomak. Meki fleece materijal prija koži i osigurava celodnevnu udobnost. Odličan za isticanje u masi i pravljenje efektnih uličnih kombinacija."
+    },
+
+    "tech-fleece-2023-crno-sivi-komplet": {
+        naziv: "Nike Tech Fleece 2023 Crno-Sivi - Komplet",
+        kategorija: "KOMPLET",
+        cena: "14.190 RSD",
+        staraCena: "20.990 RSD",
+        boje: [
+            { ime: "Crno-Siva", hex: "#a6a6a6", slike: ["../img/Nike Tech Fleece 2023/CrnoSivi/komplet1.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/komplet2.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo1.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo2pozadi.jpg", "../img/Nike Tech Fleece 2023/CrnoSivi/gornjideo3jpg.jpg"] }
+        ],
+        velicine: ["S", "M", "L", "XL"],
+        opis: "Snažan dvobojni komplet u kombinaciji crne i sive nijanse stvoren za najzahtevnije ljubitelje stila. Kontrastni blokovi na gornjem i donjem delu čine ga izuzetno upečatljivim iz svih uglova. Vrhunska izrada sa ojačanim šavovima garantuje visoku otpornost i trajanje kroz sezone. Pruža savršenu termičku izolaciju i potpunu slobodu pokreta. Komplet koji unosi futurističku i urbanu dimenziju u tvoju svakodnevnu garderobu."
     }
-
-//ovde idu jos proizvodi
-
 };
+
+
+
 
 
 // 2. SEO FUNKCIJA

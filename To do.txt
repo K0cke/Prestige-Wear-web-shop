@@ -1,5 +1,5 @@
-Dodati jos proizvoda i izmeniti cene (kompleti da idu od 12-14.5k, gornji i donji delovi da idu od 6-8k)
-U katalog ubaciti modele kad Stefan posalje isto kao do sada po bojama, a na pocetnoj staviti od jedan model vise boja da popuni lepo mesto
-Proveriti sav text
-Srediti lepo kod i obrisati nepotrebne komentare
-Probati naci neke greske i njih ispraviti
+kompleti da idu od 12-14.5k, gornji i donji delovi da idu od 6-8k
+
+1. Srediti lepo kod i obrisati nepotrebne komentare (dodatno cu to da uradim)
+
+6. Probati naci neke greske i njih ispraviti
